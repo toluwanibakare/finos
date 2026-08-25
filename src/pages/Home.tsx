@@ -21,16 +21,16 @@ export default function Home() {
   return (
     <PageContainer padded={false}>
       <div className="flex justify-center pt-2 pb-1 animate-fade-in">
-        <img src="/logo.PNG" alt="RUNDA" className="w-16 h-16 rounded-2xl object-cover" />
+        <img src="/logo.PNG" alt="RUNDA" className="w-16 h-16 rounded-[14px] object-contain" />
       </div>
 
       <div className="flex items-center justify-between px-4 pb-3">
         <div className="flex items-center gap-2.5">
           <button
             onClick={() => navigate('/more')}
-            className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 active:bg-gray-200 dark:active:bg-gray-700 transition-colors duration-150 shrink-0 overflow-hidden"
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-[#0B1320] dark:bg-[#E8B931] active:scale-95 transition-all duration-150 shrink-0"
           >
-            <img src="/logo.PNG" alt="" className="w-full h-full object-cover" />
+            <FinosIcon name="user" size={16} className="text-white dark:text-[#0B1320]" />
           </button>
           <div>
             <p className="text-[11px] text-gray-400 dark:text-gray-500 font-medium leading-none mb-1">{getGreeting()}</p>
