@@ -13,7 +13,6 @@ const tabs: Tab[] = [
   { name: 'money', label: 'Money', icon: 'wallet', path: '/money' },
   { name: 'goals', label: 'Goals', icon: 'target', path: '/goals' },
   { name: 'activity', label: 'Activity', icon: 'receipt', path: '/activity' },
-  { name: 'more', label: 'More', icon: 'more-horizontal', path: '/more' },
 ]
 
 export function BottomNav() {

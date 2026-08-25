@@ -7,6 +7,7 @@ import { BalanceCard } from '../components/ui/BalanceCard'
 import { QuickAction } from '../components/ui/QuickAction'
 import { PoolCard } from '../components/ui/PoolCard'
 import { TransactionRow } from '../components/ui/TransactionRow'
+import { FinosIcon } from '../components/icons/FinosIcons'
 
 export default function Home() {
   const navigate = useNavigate()
@@ -18,13 +19,18 @@ export default function Home() {
 
   return (
     <PageContainer padded={false}>
-      <div className="px-4 pt-2 pb-3">
-        <p className="text-[13px] text-gray-400 font-medium">
-          {getGreeting()}
-        </p>
-        <p className="text-[20px] font-bold text-[#0B1320] tracking-[-0.02em]">
-          {userProfile.name}
-        </p>
+      <div className="flex items-center justify-between px-4 pt-2 pb-3">
+        <div>
+          <p className="text-[20px] font-bold text-[#0B1320] tracking-[-0.02em]">
+            {getGreeting()}, <span className="text-gray-400 font-medium">{userProfile.name}</span>
+          </p>
+        </div>
+        <button
+          onClick={() => navigate('/more')}
+          className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 active:bg-gray-200 transition-colors duration-150"
+        >
+          <FinosIcon name="user" size={18} className="text-gray-500" />
+        </button>
       </div>
 
       <section className="px-4 animate-fade-in" style={{ animationDelay: '0ms' }}>

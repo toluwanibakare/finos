@@ -8,8 +8,6 @@ interface PoolCardProps {
 }
 
 export function PoolCard({ pool, onClick }: PoolCardProps) {
-  const isRestricted = pool.restriction !== 'available'
-
   return (
     <button
       onClick={() => onClick?.(pool)}
@@ -27,11 +25,6 @@ export function PoolCard({ pool, onClick }: PoolCardProps) {
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
           <span className="text-[14px] font-bold text-[#0B1320] truncate tracking-[-0.01em]">{pool.name}</span>
-          {isRestricted && (
-            <span className="text-[9px] font-bold text-amber-600 bg-amber-50 px-1.5 py-[3px] rounded-[6px] uppercase tracking-wider whitespace-nowrap">
-              {pool.restriction === 'restricted' ? 'Locked' : pool.restriction.replace('_', ' ')}
-            </span>
-          )}
         </div>
         <span className="text-[11px] text-gray-400 font-medium mt-0.5 block">
           {formatPercent(pool.allocationPercentage)} allocation
