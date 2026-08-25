@@ -30,7 +30,7 @@ export function Header({ title, showBack = false, onBack, rightAction, className
       } ${className}`}
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
     >
-      <div className="flex items-center justify-between h-[52px] px-4 max-w-lg mx-auto">
+      <div className="flex items-center justify-between h-[44px] px-4 max-w-lg mx-auto">
         <div className="flex items-center w-10">
           {showBack && (
             <button
