@@ -20,17 +20,17 @@ export default function Home() {
 
   return (
     <PageContainer padded={false}>
-      <div className="flex justify-center pt-4 pb-2 animate-fade-in">
-        <img src="/logo.PNG" alt="RUNDA" className="w-[72px] h-[72px] rounded-[22px] object-cover" />
+      <div className="flex justify-center pt-2 pb-1 animate-fade-in">
+        <img src="/logo.PNG" alt="RUNDA" className="w-16 h-16 rounded-2xl object-cover" />
       </div>
 
       <div className="flex items-center justify-between px-4 pb-3">
         <div className="flex items-center gap-2.5">
           <button
             onClick={() => navigate('/more')}
-            className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 active:bg-gray-200 dark:active:bg-gray-700 transition-colors duration-150 shrink-0"
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 active:bg-gray-200 dark:active:bg-gray-700 transition-colors duration-150 shrink-0 overflow-hidden"
           >
-            <img src="/logo.PNG" alt="" className="w-9 h-9 rounded-full object-cover" />
+            <img src="/logo.PNG" alt="" className="w-full h-full object-cover" />
           </button>
           <div>
             <p className="text-[11px] text-gray-400 dark:text-gray-500 font-medium leading-none mb-1">{getGreeting()}</p>
