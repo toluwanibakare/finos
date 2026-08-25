@@ -3,7 +3,6 @@ import { useStore } from '../store/useStore'
 import { PageContainer } from '../components/layout/PageContainer'
 import { Header } from '../components/layout/Header'
 import { FinosIcon } from '../components/icons/FinosIcons'
-import { userProfile } from '../data/mockData'
 
 interface MenuItem {
   icon: string
@@ -49,17 +48,6 @@ export default function More() {
       <Header title="More" />
 
       <div className="pt-4">
-        <div className="flex items-center gap-4 bg-white dark:bg-[#1A2332] rounded-[20px] p-5 mb-6 animate-fade-in">
-          <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#013D7C] dark:bg-[#E8B931] shrink-0">
-            <FinosIcon name="user" size={24} className="text-white dark:text-[#013D7C]" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-[15px] font-bold text-[#013D7C] dark:text-white tracking-[-0.01em]">{userProfile.name}</p>
-            <p className="text-[12px] text-gray-400 font-medium mt-0.5">tolu@email.com</p>
-          </div>
-          <FinosIcon name="chevron-right" size={16} className="text-gray-300 dark:text-gray-600" />
-        </div>
-
         {menuSections.map((section, si) => (
           <div
             key={section.title}

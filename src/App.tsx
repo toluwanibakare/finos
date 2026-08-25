@@ -22,6 +22,7 @@ import Preferences from './pages/Preferences'
 import About from './pages/About'
 import Terms from './pages/Terms'
 import Website from './pages/Website'
+import Profile from './pages/Profile'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -53,7 +54,8 @@ function AppShell() {
           <Route path="/settings/preferences" element={<Preferences />} />
           <Route path="/settings/about" element={<About />} />
           <Route path="/settings/terms" element={<Terms />} />
-          <Route path="/settings/website" element={<Website />} />
+            <Route path="/settings/website" element={<Website />} />
+            <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
       <BottomNav />
