@@ -21,12 +21,12 @@ export default function Home() {
   return (
     <PageContainer padded={false}>
       <div className="sticky top-0 z-40 bg-[#F7F8FB] dark:bg-[#0B1320]">
-        <div className="flex justify-center py-0">
+        <div className="flex justify-center -my-2">
           <img src="/logo.PNG" alt="RUNDA" className="w-[110px] h-[110px] rounded-[24px] object-contain" />
         </div>
       </div>
 
-      <div className="flex items-center justify-between px-4 pt-1 pb-3">
+      <div className="flex items-center justify-between px-4 pb-2">
         <div className="flex items-center gap-2.5">
           <button
             onClick={() => navigate('/more')}

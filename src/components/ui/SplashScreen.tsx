@@ -30,7 +30,7 @@ export function SplashScreen({ onFinish }: SplashScreenProps) {
         <img src="/logo.PNG" alt="RUNDA" className="w-28 h-28 rounded-[32px] object-contain animate-[scaleUp_0.8s_cubic-bezier(0.22,1,0.36,1)_forwards]" />
       </div>
 
-      <div className={`mt-1 transition-all duration-500 ${
+      <div className={`transition-all duration-500 ${
         phase !== 'logo' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
       }`}>
         <p className={`text-[13px] font-medium tracking-wide ${
