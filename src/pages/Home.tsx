@@ -22,7 +22,7 @@ export default function Home() {
     <PageContainer padded={false}>
       <div className="sticky top-0 z-40 bg-[#F7F8FB] dark:bg-[#0B1320] overflow-hidden" style={{ height: '85px' }}>
         <div className="flex justify-center items-center h-full">
-          <img src="/logo.PNG" alt="RUNDA" className="w-[100px] h-[100px] rounded-[22px] object-contain" />
+          <img src={darkMode ? "/logo_white.PNG" : "/logo.PNG"} alt="RUNDA" className="w-[100px] h-[100px] rounded-[22px] object-contain" />
         </div>
       </div>
 

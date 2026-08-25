@@ -27,7 +27,7 @@ export function SplashScreen({ onFinish }: SplashScreenProps) {
       <div className={`transition-all duration-700 ${
         phase === 'done' ? 'scale-110 opacity-0' : 'scale-100 opacity-100'
       }`}>
-        <img src="/logo.PNG" alt="RUNDA" className="w-28 h-28 rounded-[32px] object-contain animate-[scaleUp_0.8s_cubic-bezier(0.22,1,0.36,1)_forwards]" />
+        <img src={darkMode ? "/logo_white.PNG" : "/logo.PNG"} alt="RUNDA" className="w-28 h-28 rounded-[32px] object-contain animate-[scaleUp_0.8s_cubic-bezier(0.22,1,0.36,1)_forwards]" />
       </div>
 
       <div className={`transition-all duration-500 ${

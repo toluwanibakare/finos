@@ -3,6 +3,7 @@ import { useStore } from '../../store/useStore'
 
 export function PinLogin() {
   const { pin, setPin, unlock } = useStore()
+  const darkMode = useStore((s) => s.darkMode)
   const hasPin = pin.length > 0
   const [digits, setDigits] = useState('')
   const [confirmDigits, setConfirmDigits] = useState('')
@@ -58,13 +59,17 @@ export function PinLogin() {
   const dots = Array.from({ length: 4 }, (_, i) => i < digits.length)
 
   return (
-    <div className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#013D7C] transition-all duration-500">
+    <div className={`fixed inset-0 z-[200] flex flex-col items-center justify-center transition-all duration-500 ${
+      darkMode ? 'bg-[#0B1320]' : 'bg-[#013D7C]'
+    }`}>
       <div className={`flex flex-col items-center transition-all duration-500 ${success ? 'scale-110 opacity-0' : 'scale-100 opacity-100'}`}>
         <div className="flex items-center justify-center w-20 h-20 rounded-[22px] mb-6 animate-scale-in">
-          <img src="/logo.PNG" alt="RUNDA" className="w-20 h-20 rounded-[22px] object-cover" />
+          <img src={darkMode ? "/logo_white.PNG" : "/logo.PNG"} alt="RUNDA" className="w-20 h-20 rounded-[22px] object-contain" />
         </div>
 
-        <p className="text-[14px] text-white/50 font-medium mb-1 animate-fade-in">
+        <p className={`text-[14px] font-medium mb-1 animate-fade-in ${
+          darkMode ? 'text-white/50' : 'text-white/50'
+        }`}>
           {hasPin ? 'Enter your PIN' : !confirming ? 'Confirm your PIN' : 'Create a 4-digit PIN'}
         </p>
 
@@ -77,7 +82,7 @@ export function PinLogin() {
                   ? 'bg-[#C62828] animate-pulse'
                   : filled
                   ? 'bg-[#E8B931] scale-110'
-                  : 'bg-white/15'
+                  : darkMode ? 'bg-white/15' : 'bg-white/15'
               }`}
             />
           ))}
