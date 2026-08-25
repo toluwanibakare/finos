@@ -29,11 +29,11 @@ export function ProgressIndicator({
       {label && (
         <div className="flex items-center justify-between mb-1.5">
           <span className="text-[11px] font-medium text-gray-400">{label}</span>
-          <span className="text-[11px] font-bold text-[#0B1320] tabular-nums">{percent}%</span>
+          <span className="text-[11px] font-bold text-[#0B1320] dark:text-white tabular-nums">{percent}%</span>
         </div>
       )}
       <div
-        className="w-full bg-gray-100 rounded-full overflow-hidden"
+        className="w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden"
         style={{ height }}
       >
         <div

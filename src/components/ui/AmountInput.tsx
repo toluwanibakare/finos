@@ -33,7 +33,7 @@ export function AmountInput({
 
   return (
     <div className={`flex items-center justify-center gap-1 ${className}`}>
-      <span className="text-[32px] font-bold text-gray-200">{'\u20A6'}</span>
+      <span className="text-[32px] font-bold text-gray-200 dark:text-gray-700">{'\u20A6'}</span>
       <input
         ref={inputRef}
         type="text"
@@ -41,7 +41,7 @@ export function AmountInput({
         value={value}
         onChange={handleChange}
         placeholder={placeholder}
-        className="text-[40px] font-bold text-[#0B1320] bg-transparent text-center outline-none w-full placeholder:text-gray-200 tabular-nums tracking-[-0.03em] caret-[#0B1320]"
+        className="text-[40px] font-bold text-[#0B1320] dark:text-white bg-transparent text-center outline-none w-full placeholder:text-gray-200 dark:placeholder:text-gray-700 tabular-nums tracking-[-0.03em] caret-[#0B1320] dark:caret-white"
         autoComplete="off"
       />
     </div>

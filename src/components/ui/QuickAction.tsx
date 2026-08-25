@@ -27,7 +27,7 @@ export function QuickAction({ icon, label, onClick, className = '' }: QuickActio
       >
         <FinosIcon name={config.icon} size={22} className={config.iconColor} />
       </div>
-      <span className="text-[11px] font-semibold text-gray-500 leading-tight text-center">
+      <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400 leading-tight text-center">
         {label}
       </span>
     </button>

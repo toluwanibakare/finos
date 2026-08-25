@@ -70,7 +70,7 @@ export default function Activity() {
               className={`shrink-0 px-3.5 py-2 rounded-[10px] text-[12px] font-bold transition-all duration-200 ${
                 activeFilter === tab.key
                   ? 'bg-[#0B1320] text-white'
-                  : 'bg-white text-gray-500'
+                  : 'bg-white dark:bg-[#1A2332] text-gray-500 dark:text-gray-400'
               }`}
             >
               {tab.label}
@@ -79,7 +79,7 @@ export default function Activity() {
           <button
             onClick={() => setShowDateFilter(!showDateFilter)}
             className={`shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-[10px] text-[12px] font-bold transition-all duration-200 ${
-              showDateFilter ? 'bg-[#0B1320] text-white' : 'bg-white text-gray-500'
+              showDateFilter ? 'bg-[#0B1320] text-white' : 'bg-white dark:bg-[#1A2332] text-gray-500 dark:text-gray-400'
             }`}
           >
             <FinosIcon name="calendar" size={14} />
@@ -95,7 +95,7 @@ export default function Activity() {
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="w-full bg-white rounded-[12px] px-3 py-2.5 text-[13px] text-[#0B1320] outline-none border border-gray-100 focus:border-gray-300 transition-colors duration-200"
+                className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-3 py-2.5 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 transition-colors duration-200"
               />
             </div>
             <div className="flex-1">
@@ -104,7 +104,7 @@ export default function Activity() {
                 type="date"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
-                className="w-full bg-white rounded-[12px] px-3 py-2.5 text-[13px] text-[#0B1320] outline-none border border-gray-100 focus:border-gray-300 transition-colors duration-200"
+                className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-3 py-2.5 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 transition-colors duration-200"
               />
             </div>
             {hasActiveFilters && (
@@ -133,7 +133,7 @@ export default function Activity() {
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 px-1">
                   {formatDate(date)}
                 </p>
-                <div className="bg-white rounded-[20px] divide-y divide-gray-100 overflow-hidden">
+                <div className="bg-white dark:bg-[#1A2332] rounded-[20px] divide-y divide-gray-100 dark:divide-gray-700/50 overflow-hidden">
                   {txns.map((txn) => (
                     <TransactionRow
                       key={txn.id}

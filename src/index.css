@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-navy-50: #EDF0F7;
   --color-navy-100: #D4DBEB;
@@ -47,6 +49,12 @@ body {
   background-color: #F7F8FB;
   color: var(--color-slate-900);
   overscroll-behavior: none;
+}
+
+.dark body,
+.dark #root {
+  background-color: #0B1320;
+  color: white;
 }
 
 #root {

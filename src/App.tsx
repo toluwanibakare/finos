@@ -1,5 +1,9 @@
+import { useState, useCallback, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { BottomNav } from './components/layout/BottomNav'
+import { SplashScreen } from './components/ui/SplashScreen'
+import { PinLogin } from './components/ui/PinLogin'
+import { useStore } from './store/useStore'
 import Home from './pages/Home'
 import Money from './pages/Money'
 import Goals from './pages/Goals'
@@ -20,9 +24,31 @@ import Terms from './pages/Terms'
 import Website from './pages/Website'
 
 export default function App() {
+  const darkMode = useStore((s) => s.darkMode)
+  const isLocked = useStore((s) => s.isLocked)
+  const [showSplash, setShowSplash] = useState(true)
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [darkMode])
+
+  const handleSplash = useCallback(() => setShowSplash(false), [])
+
+  if (showSplash) {
+    return <SplashScreen onFinish={handleSplash} />
+  }
+
+  if (isLocked) {
+    return <PinLogin />
+  }
+
   return (
     <BrowserRouter>
-      <div className="min-h-dvh flex flex-col bg-[#F7F8FB]">
+      <div className="min-h-dvh flex flex-col bg-[#F7F8FB] dark:bg-[#0B1320] transition-colors">
         <div className="flex-1 pb-[68px]">
           <Routes>
             <Route path="/" element={<Home />} />

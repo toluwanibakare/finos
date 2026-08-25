@@ -89,63 +89,63 @@ export default function GoalDetail() {
 
         {/* Stats */}
         <div className="grid grid-cols-2 gap-2.5 animate-fade-in" style={{ animationDelay: '80ms' }}>
-          <div className="bg-white rounded-[16px] p-4">
+          <div className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4">
             <p className="text-[10px] text-gray-400 font-medium tracking-wide uppercase mb-1">Remaining</p>
-            <p className="text-[14px] font-bold text-[#0B1320] tabular-nums tracking-[-0.01em]">
+            <p className="text-[14px] font-bold text-[#0B1320] dark:text-white tabular-nums tracking-[-0.01em]">
               {remaining > 0 ? formatNaira(remaining) : 'Achieved'}
             </p>
           </div>
-          <div className="bg-white rounded-[16px] p-4">
+          <div className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4">
             <p className="text-[10px] text-gray-400 font-medium tracking-wide uppercase mb-1">Monthly Rate</p>
-            <p className="text-[14px] font-bold text-[#0B1320] tabular-nums tracking-[-0.01em]">
+            <p className="text-[14px] font-bold text-[#0B1320] dark:text-white tabular-nums tracking-[-0.01em]">
               {formatNaira(goal.contributionRate)}/mo
             </p>
           </div>
-          <div className="bg-white rounded-[16px] p-4">
+          <div className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4">
             <p className="text-[10px] text-gray-400 font-medium tracking-wide uppercase mb-1">Est. Completion</p>
-            <p className="text-[14px] font-bold text-[#0B1320] tracking-[-0.01em]">
+            <p className="text-[14px] font-bold text-[#0B1320] dark:text-white tracking-[-0.01em]">
               {goal.state === 'completed' ? 'Completed' : estimated}
             </p>
           </div>
-          <div className="bg-white rounded-[16px] p-4">
+          <div className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4">
             <p className="text-[10px] text-gray-400 font-medium tracking-wide uppercase mb-1">Created</p>
-            <p className="text-[14px] font-bold text-[#0B1320] tracking-[-0.01em]">{formatDate(goal.createdAt)}</p>
+            <p className="text-[14px] font-bold text-[#0B1320] dark:text-white tracking-[-0.01em]">{formatDate(goal.createdAt)}</p>
           </div>
         </div>
 
         {/* Deadline */}
         {goal.deadline && (
-          <div className="bg-white rounded-[16px] p-4 flex items-center gap-3 animate-fade-in" style={{ animationDelay: '160ms' }}>
+          <div className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4 flex items-center gap-3 animate-fade-in" style={{ animationDelay: '160ms' }}>
             <div className="flex items-center justify-center w-9 h-9 rounded-[10px] bg-[#E3F2FD] shrink-0">
               <FinosIcon name="calendar" size={16} className="text-[#1565C0]" />
             </div>
             <div className="flex-1">
               <p className="text-[10px] text-gray-400 font-medium tracking-wide uppercase">Deadline</p>
-              <p className="text-[13px] font-bold text-[#0B1320]">{formatDate(goal.deadline)}</p>
+              <p className="text-[13px] font-bold text-[#0B1320] dark:text-white">{formatDate(goal.deadline)}</p>
             </div>
           </div>
         )}
 
         {/* Recent activity */}
         <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-          <h3 className="text-[13px] font-bold text-[#0B1320] mb-3 tracking-[-0.01em]">Recent Activity</h3>
+          <h3 className="text-[13px] font-bold text-[#0B1320] dark:text-white mb-3 tracking-[-0.01em]">Recent Activity</h3>
           {goalTransactions.length === 0 ? (
-            <div className="bg-white rounded-[20px] p-8 text-center">
+            <div className="bg-white dark:bg-[#1A2332] rounded-[20px] p-8 text-center">
               <p className="text-[13px] text-gray-400 font-medium">No transactions linked to this goal yet.</p>
             </div>
           ) : (
-            <div className="bg-white rounded-[20px] overflow-hidden">
+            <div className="bg-white dark:bg-[#1A2332] rounded-[20px] overflow-hidden">
               {goalTransactions.map((txn) => (
                 <button
                   key={txn.id}
                   onClick={() => navigate(`/transaction/${txn.id}`)}
-                  className="flex items-center gap-3 w-full px-4 py-3 text-left border-b border-gray-50 last:border-0 active:bg-gray-50 transition-colors duration-150"
+                  className="flex items-center gap-3 w-full px-4 py-3 text-left border-b border-gray-50 dark:border-gray-700/50 last:border-0 active:bg-gray-50 dark:active:bg-gray-800 transition-colors duration-150"
                 >
                   <div className="flex-1 min-w-0">
-                    <p className="text-[13px] font-semibold text-[#0B1320] truncate">{txn.description}</p>
+                    <p className="text-[13px] font-semibold text-[#0B1320] dark:text-white truncate">{txn.description}</p>
                     <p className="text-[11px] text-gray-400 font-medium">{formatDate(txn.date)}</p>
                   </div>
-                  <span className="text-[12px] font-bold text-[#0B1320] tabular-nums">
+                  <span className="text-[12px] font-bold text-[#0B1320] dark:text-white tabular-nums">
                     {formatNaira(txn.amount)}
                   </span>
                 </button>

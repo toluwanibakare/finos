@@ -3,6 +3,15 @@ import type { Pool, Transaction, AllocationPolicy, SavingsGoal, Notification, In
 import { defaultPools, defaultPolicy, mockTransactions, mockGoals, mockNotifications, mockIncome } from '../data/mockData'
 
 interface AppState {
+  darkMode: boolean
+  toggleDarkMode: () => void
+
+  isLocked: boolean
+  pin: string
+  setPin: (pin: string) => void
+  unlock: (pin: string) => boolean
+  lock: () => void
+
   balanceHidden: boolean
   toggleBalance: () => void
 
@@ -40,6 +49,34 @@ interface AppState {
 }
 
 export const useStore = create<AppState>((set, get) => ({
+  darkMode: localStorage.getItem('runda-dark') === 'true',
+  toggleDarkMode: () => {
+    const next = !get().darkMode
+    localStorage.setItem('runda-dark', String(next))
+    if (next) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+    set({ darkMode: next })
+  },
+
+  isLocked: localStorage.getItem('runda-pin') !== null,
+  pin: localStorage.getItem('runda-pin') || '',
+  setPin: (pin: string) => {
+    localStorage.setItem('runda-pin', pin)
+    set({ pin, isLocked: false })
+  },
+  unlock: (pin: string) => {
+    const stored = get().pin
+    if (stored === pin) {
+      set({ isLocked: false })
+      return true
+    }
+    return false
+  },
+  lock: () => set({ isLocked: true }),
+
   balanceHidden: false,
   toggleBalance: () => set((s) => ({ balanceHidden: !s.balanceHidden })),
 

@@ -23,14 +23,14 @@ export function TransactionRow({ transaction, onClick }: TransactionRowProps) {
   return (
     <button
       onClick={() => onClick?.(transaction)}
-      className="flex items-center gap-3 w-full bg-white py-3.5 px-1 text-left transition-colors duration-150 active:bg-gray-50"
+      className="flex items-center gap-3 w-full bg-white dark:bg-[#1A2332] py-3.5 px-1 text-left transition-colors duration-150 active:bg-gray-50 dark:active:bg-gray-800"
     >
       <div className={`flex items-center justify-center w-10 h-10 rounded-[12px] shrink-0 ${config.bg}`}>
         <FinosIcon name={config.icon} size={17} className={config.color} />
       </div>
 
       <div className="flex-1 min-w-0">
-        <p className="text-[13px] font-bold text-[#0B1320] truncate tracking-[-0.01em]">
+        <p className="text-[13px] font-bold text-[#0B1320] dark:text-white truncate tracking-[-0.01em]">
           {transaction.description}
         </p>
         <p className="text-[11px] text-gray-400 font-medium mt-0.5">

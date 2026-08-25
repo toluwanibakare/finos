@@ -8,7 +8,7 @@ function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
     <button
       onClick={onToggle}
       className={`w-11 h-6 rounded-full relative transition-colors duration-200 ${
-        on ? 'bg-[#0B1320]' : 'bg-gray-200'
+        on ? 'bg-[#0B1320]' : 'bg-gray-200 dark:bg-gray-700'
       }`}
     >
       <div
@@ -28,31 +28,31 @@ export default function Privacy() {
     <PageContainer>
       <Header title="Privacy & Security" showBack />
       <div className="pt-4">
-        <div className="bg-white rounded-[20px] overflow-hidden">
-          <div className="px-4 py-3.5 flex items-center justify-between border-b border-gray-50">
+        <div className="bg-white dark:bg-[#1A2332] rounded-[20px] overflow-hidden">
+          <div className="px-4 py-3.5 flex items-center justify-between border-b border-gray-50 dark:border-gray-700/50">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50">
-                <FinosIcon name="shield" size={16} className="text-gray-500" />
+              <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
+                <FinosIcon name="shield" size={16} className="text-gray-500 dark:text-gray-400" />
               </div>
-              <span className="text-[13px] font-semibold text-[#0B1320]">Biometric Lock</span>
+              <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">Biometric Lock</span>
             </div>
             <Toggle on={biometric} onToggle={() => setBiometric(!biometric)} />
           </div>
-          <button className="px-4 py-3.5 flex items-center justify-between w-full text-left border-b border-gray-50 active:bg-gray-50 transition-colors">
+          <button className="px-4 py-3.5 flex items-center justify-between w-full text-left border-b border-gray-50 dark:border-gray-700/50 active:bg-gray-50 dark:active:bg-gray-800 transition-colors">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50">
-                <FinosIcon name="lock" size={16} className="text-gray-500" />
+              <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
+                <FinosIcon name="lock" size={16} className="text-gray-500 dark:text-gray-400" />
               </div>
-              <span className="text-[13px] font-semibold text-[#0B1320]">Change PIN</span>
+              <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">Change PIN</span>
             </div>
-            <FinosIcon name="chevron-right" size={16} className="text-gray-300" />
+            <FinosIcon name="chevron-right" size={16} className="text-gray-300 dark:text-gray-600" />
           </button>
           <div className="px-4 py-3.5 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50">
-                <FinosIcon name="eye" size={16} className="text-gray-500" />
+              <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
+                <FinosIcon name="eye" size={16} className="text-gray-500 dark:text-gray-400" />
               </div>
-              <span className="text-[13px] font-semibold text-[#0B1320]">Hide Balances by Default</span>
+              <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">Hide Balances by Default</span>
             </div>
             <Toggle on={hideBalance} onToggle={() => setHideBalance(!hideBalance)} />
           </div>

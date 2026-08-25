@@ -41,7 +41,7 @@ export default function PoolDetail() {
 
       <div className="pt-4 space-y-5">
         {/* Pool header */}
-        <div className="bg-white rounded-[20px] p-5 animate-fade-in">
+        <div className="bg-white dark:bg-[#1A2332] rounded-[20px] p-5 animate-fade-in">
           <div className="flex items-center gap-4 mb-4">
             <div
               className="flex items-center justify-center w-14 h-14 rounded-[16px] shrink-0"
@@ -52,7 +52,7 @@ export default function PoolDetail() {
               </span>
             </div>
             <div className="flex-1 min-w-0">
-              <h2 className="text-[18px] font-bold text-[#0B1320] tracking-[-0.02em]">{pool.name}</h2>
+              <h2 className="text-[18px] font-bold text-[#0B1320] dark:text-white tracking-[-0.02em]">{pool.name}</h2>
               <p className="text-[11px] text-gray-400 font-medium mt-0.5">
                 {formatPercent(pool.allocationPercentage)} of income
               </p>
@@ -60,7 +60,7 @@ export default function PoolDetail() {
           </div>
           <div>
             <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-1">Balance</p>
-            <p className="text-[28px] font-bold text-[#0B1320] tracking-[-0.03em] tabular-nums">
+            <p className="text-[28px] font-bold text-[#0B1320] dark:text-white tracking-[-0.03em] tabular-nums">
               {formatNaira(pool.balance)}
             </p>
           </div>
@@ -89,7 +89,7 @@ export default function PoolDetail() {
         {/* Linked goal */}
         {linkedGoal && (
           <div
-            className="bg-white rounded-[16px] p-4 animate-fade-in"
+            className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4 animate-fade-in"
             style={{ animationDelay: '120ms' }}
           >
             <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-2">Linked Goal</p>
@@ -101,12 +101,12 @@ export default function PoolDetail() {
                 <FinosIcon name="target" size={16} className="text-[#1565C0]" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-[13px] font-bold text-[#0B1320]">{linkedGoal.name}</p>
+                <p className="text-[13px] font-bold text-[#0B1320] dark:text-white">{linkedGoal.name}</p>
                 <p className="text-[11px] text-gray-400 font-medium">
                   {formatNaira(linkedGoal.currentAmount)} / {formatNaira(linkedGoal.targetAmount)}
                 </p>
               </div>
-              <FinosIcon name="chevron-right" size={16} className="text-gray-300" />
+              <FinosIcon name="chevron-right" size={16} className="text-gray-300 dark:text-gray-600" />
             </button>
           </div>
         )}
@@ -114,14 +114,14 @@ export default function PoolDetail() {
         {/* Sub-pools */}
         {subPools.length > 0 && (
           <div className="animate-fade-in" style={{ animationDelay: '180ms' }}>
-            <h3 className="text-[13px] font-bold text-[#0B1320] mb-3 tracking-[-0.01em]">Sub-Pools</h3>
-            <div className="bg-white rounded-[20px] overflow-hidden">
+            <h3 className="text-[13px] font-bold text-[#0B1320] dark:text-white mb-3 tracking-[-0.01em]">Sub-Pools</h3>
+            <div className="bg-white dark:bg-[#1A2332] rounded-[20px] overflow-hidden">
               {subPools.map((sub, index) => (
                 <button
                   key={sub.id}
                   onClick={() => navigate(`/pool/${sub.id}`)}
-                  className={`flex items-center gap-3 w-full px-4 py-3.5 text-left active:bg-gray-50 transition-colors duration-150 ${
-                    index > 0 ? 'border-t border-gray-50' : ''
+                  className={`flex items-center gap-3 w-full px-4 py-3.5 text-left active:bg-gray-50 dark:active:bg-gray-800 transition-colors duration-150 ${
+                    index > 0 ? 'border-t border-gray-50 dark:border-gray-700/50' : ''
                   }`}
                 >
                   <div
@@ -133,7 +133,7 @@ export default function PoolDetail() {
                     </span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[13px] font-bold text-[#0B1320] truncate">{sub.name}</p>
+                    <p className="text-[13px] font-bold text-[#0B1320] dark:text-white truncate">{sub.name}</p>
                     <p className="text-[11px] text-gray-400 font-medium">{formatNaira(sub.balance)}</p>
                   </div>
                   {sub.restriction !== 'available' && (
@@ -141,7 +141,7 @@ export default function PoolDetail() {
                       <FinosIcon name="alert-circle" size={12} className="text-[#E65100]" />
                     </div>
                   )}
-                  <FinosIcon name="chevron-right" size={16} className="text-gray-300 shrink-0" />
+                  <FinosIcon name="chevron-right" size={16} className="text-gray-300 dark:text-gray-600 shrink-0" />
                 </button>
               ))}
             </div>
@@ -150,16 +150,16 @@ export default function PoolDetail() {
 
         {/* Transactions */}
         <div className="animate-fade-in" style={{ animationDelay: subPools.length > 0 ? '240ms' : '180ms' }}>
-          <h3 className="text-[13px] font-bold text-[#0B1320] mb-3 tracking-[-0.01em]">Transactions</h3>
+          <h3 className="text-[13px] font-bold text-[#0B1320] dark:text-white mb-3 tracking-[-0.01em]">Transactions</h3>
           {poolTxns.length === 0 ? (
-            <div className="bg-white rounded-[20px] p-8 text-center">
-              <div className="flex items-center justify-center w-10 h-10 rounded-[10px] bg-gray-50 mx-auto mb-3">
-                <FinosIcon name="receipt" size={18} className="text-gray-300" />
+            <div className="bg-white dark:bg-[#1A2332] rounded-[20px] p-8 text-center">
+              <div className="flex items-center justify-center w-10 h-10 rounded-[10px] bg-gray-50 dark:bg-gray-800 mx-auto mb-3">
+                <FinosIcon name="receipt" size={18} className="text-gray-300 dark:text-gray-600" />
               </div>
               <p className="text-[13px] text-gray-400 font-medium">No transactions for this pool yet.</p>
             </div>
           ) : (
-            <div className="bg-white rounded-[20px] divide-y divide-gray-100 overflow-hidden">
+            <div className="bg-white dark:bg-[#1A2332] rounded-[20px] divide-y divide-gray-100 dark:divide-gray-700/50 overflow-hidden">
               {poolTxns.map((txn) => (
                 <TransactionRow
                   key={txn.id}

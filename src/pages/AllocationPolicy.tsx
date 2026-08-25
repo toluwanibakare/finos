@@ -120,7 +120,6 @@ export default function AllocationPolicy() {
           </p>
         </div>
 
-        {/* Status indicator */}
         <div
           className={`flex items-center justify-between px-4 py-3.5 rounded-[16px] transition-all animate-fade-in ${
             isValid
@@ -144,10 +143,10 @@ export default function AllocationPolicy() {
               }
             />
             <div>
-              <p className="text-[14px] font-bold text-[#0B1320] tabular-nums">
+              <p className="text-[14px] font-bold text-[#0B1320] dark:text-white tabular-nums">
                 {totalPercent}%
               </p>
-              <p className="text-[11px] text-gray-500 font-medium">
+              <p className="text-[11px] text-gray-500 dark:text-gray-400 font-medium">
                 {isValid
                   ? 'Allocations balance'
                   : totalPercent > 100
@@ -173,20 +172,19 @@ export default function AllocationPolicy() {
                 strokeLinecap="round"
               />
             </svg>
-            <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-[#0B1320]">
+            <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-[#0B1320] dark:text-white">
               {totalPercent}
             </span>
           </div>
         </div>
 
-        {/* Allocation items */}
         <div className="space-y-2 animate-fade-in" style={{ animationDelay: '80ms' }}>
           {allocations.map((alloc, index) => {
             const previewAmount = Math.round((PREVIEW_INCOME * alloc.percentage) / 100)
             return (
               <div
                 key={alloc.poolId}
-                className="bg-white rounded-[16px] p-4 animate-fade-in"
+                className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4 animate-fade-in"
                 style={{ animationDelay: `${index * 30}ms` }}
               >
                 <div className="flex items-center gap-3 mb-3">
@@ -199,7 +197,7 @@ export default function AllocationPolicy() {
                     </span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <span className="text-[13px] font-bold text-[#0B1320] block truncate tracking-[-0.01em]">
+                    <span className="text-[13px] font-bold text-[#0B1320] dark:text-white block truncate tracking-[-0.01em]">
                       {alloc.poolName}
                     </span>
                     <span className="text-[11px] text-gray-400 font-medium">
@@ -208,7 +206,7 @@ export default function AllocationPolicy() {
                   </div>
                   <span
                     className={`text-[16px] font-bold tabular-nums tracking-[-0.02em] ${
-                      alloc.percentage > 0 ? 'text-[#0B1320]' : 'text-gray-200'
+                      alloc.percentage > 0 ? 'text-[#0B1320] dark:text-white' : 'text-gray-200 dark:text-gray-700'
                     }`}
                   >
                     {alloc.percentage}%
@@ -222,7 +220,7 @@ export default function AllocationPolicy() {
                   step={1}
                   value={alloc.percentage}
                   onChange={(e) => updatePercentage(alloc.poolId, parseInt(e.target.value, 10))}
-                  className="w-full h-1.5 bg-gray-100 rounded-full appearance-none cursor-pointer"
+                  className="w-full h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full appearance-none cursor-pointer"
                 />
 
                 <div className="flex items-center justify-between mt-3">
@@ -230,14 +228,14 @@ export default function AllocationPolicy() {
                     <button
                       onClick={() => moveAllocation(index, -1)}
                       disabled={index === 0}
-                      className="flex items-center justify-center w-7 h-7 rounded-[8px] text-gray-400 active:bg-gray-50 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+                      className="flex items-center justify-center w-7 h-7 rounded-[8px] text-gray-400 active:bg-gray-50 dark:active:bg-gray-800 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
                     >
                       <FinosIcon name="chevron-up" size={16} />
                     </button>
                     <button
                       onClick={() => moveAllocation(index, 1)}
                       disabled={index === allocations.length - 1}
-                      className="flex items-center justify-center w-7 h-7 rounded-[8px] text-gray-400 active:bg-gray-50 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+                      className="flex items-center justify-center w-7 h-7 rounded-[8px] text-gray-400 active:bg-gray-50 dark:active:bg-gray-800 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
                     >
                       <FinosIcon name="chevron-down" size={16} />
                     </button>
@@ -246,7 +244,7 @@ export default function AllocationPolicy() {
                   {allocations.length > 1 && (
                     <button
                       onClick={() => removeAllocation(alloc.poolId)}
-                      className="flex items-center justify-center w-7 h-7 rounded-[8px] text-gray-300 active:text-[#C62828] active:bg-[#FFEBEE] transition-colors"
+                      className="flex items-center justify-center w-7 h-7 rounded-[8px] text-gray-300 dark:text-gray-600 active:text-[#C62828] active:bg-[#FFEBEE] transition-colors"
                     >
                       <FinosIcon name="trash" size={14} />
                     </button>
@@ -257,21 +255,19 @@ export default function AllocationPolicy() {
           })}
         </div>
 
-        {/* Add allocation button */}
         <button
           onClick={() => {
             setCustomMode(false)
             setShowAddSheet(true)
           }}
-          className="w-full flex items-center justify-center gap-2 py-3.5 rounded-[16px] border-2 border-dashed border-gray-200 text-gray-400 text-[13px] font-semibold active:border-gray-300 active:text-gray-500 transition-all animate-fade-in"
+          className="w-full flex items-center justify-center gap-2 py-3.5 rounded-[16px] border-2 border-dashed border-gray-200 dark:border-gray-700 text-gray-400 text-[13px] font-semibold active:border-gray-300 dark:active:border-gray-600 active:text-gray-500 transition-all animate-fade-in"
           style={{ animationDelay: `${allocations.length * 30 + 80}ms` }}
         >
           <FinosIcon name="plus" size={16} />
           Add Allocation
         </button>
 
-        {/* Live preview */}
-        <div className="bg-white rounded-[16px] p-4 animate-fade-in" style={{ animationDelay: `${allocations.length * 30 + 120}ms` }}>
+        <div className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4 animate-fade-in" style={{ animationDelay: `${allocations.length * 30 + 120}ms` }}>
           <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-3">
             Preview — If {formatNaira(PREVIEW_INCOME)} enters
           </p>
@@ -285,20 +281,20 @@ export default function AllocationPolicy() {
                       className="w-2.5 h-2.5 rounded-full shrink-0"
                       style={{ backgroundColor: alloc.color }}
                     />
-                    <span className="text-[12px] text-gray-500 font-medium">{alloc.poolName}</span>
-                    <span className="text-[10px] text-gray-300 font-medium">{alloc.percentage}%</span>
+                    <span className="text-[12px] text-gray-500 dark:text-gray-400 font-medium">{alloc.poolName}</span>
+                    <span className="text-[10px] text-gray-300 dark:text-gray-600 font-medium">{alloc.percentage}%</span>
                   </div>
-                  <span className="text-[12px] font-bold text-[#0B1320] tabular-nums">{formatNaira(previewAmount)}</span>
+                  <span className="text-[12px] font-bold text-[#0B1320] dark:text-white tabular-nums">{formatNaira(previewAmount)}</span>
                 </div>
               )
             })}
           </div>
           {allocations.filter((a) => a.percentage > 0).length === 0 && (
-            <p className="text-[12px] text-gray-300 text-center py-3 font-medium">
+            <p className="text-[12px] text-gray-300 dark:text-gray-600 text-center py-3 font-medium">
               Move sliders to see preview
             </p>
           )}
-          <div className="border-t border-gray-100 mt-3 pt-3 flex items-center justify-between">
+          <div className="border-t border-gray-100 dark:border-gray-700/50 mt-3 pt-3 flex items-center justify-between">
             <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wide">Total</span>
             <span className={`text-[13px] font-bold ${isValid ? 'text-[#2E7D32]' : 'text-[#C62828]'}`}>
               {formatNaira(
@@ -311,7 +307,6 @@ export default function AllocationPolicy() {
           </div>
         </div>
 
-        {/* Save button */}
         <button
           onClick={handleSave}
           disabled={!isValid}
@@ -322,7 +317,6 @@ export default function AllocationPolicy() {
         </button>
       </div>
 
-      {/* Add allocation sheet */}
       {showAddSheet && (
         <div className="fixed inset-0 z-[60] flex items-end justify-center">
           <div
@@ -333,12 +327,12 @@ export default function AllocationPolicy() {
               setCustomName('')
             }}
           />
-          <div className="relative bg-white w-full max-w-lg rounded-t-[28px] p-5 pb-8 animate-slide-up">
-            <div className="w-8 h-[3px] bg-gray-200 rounded-full mx-auto mb-4" />
+          <div className="relative bg-white dark:bg-[#1A2332] w-full max-w-lg rounded-t-[28px] p-5 pb-8 animate-slide-up">
+            <div className="w-8 h-[3px] bg-gray-200 dark:bg-gray-700 rounded-full mx-auto mb-4" />
 
             {!customMode ? (
               <>
-                <h3 className="text-[15px] font-bold text-[#0B1320] mb-1">Add Allocation</h3>
+                <h3 className="text-[15px] font-bold text-[#0B1320] dark:text-white mb-1">Add Allocation</h3>
                 <p className="text-[12px] text-gray-400 font-medium mb-4">
                   Choose a pool or create a custom allocation
                 </p>
@@ -349,7 +343,7 @@ export default function AllocationPolicy() {
                       <button
                         key={pool.id}
                         onClick={() => addFromPool(pool)}
-                        className="flex items-center gap-3 w-full p-3 rounded-[12px] active:bg-gray-50 transition-colors text-left"
+                        className="flex items-center gap-3 w-full p-3 rounded-[12px] active:bg-gray-50 dark:active:bg-gray-800 transition-colors text-left"
                       >
                         <div
                           className="flex items-center justify-center w-9 h-9 rounded-[10px] shrink-0"
@@ -360,10 +354,10 @@ export default function AllocationPolicy() {
                           </span>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-[13px] font-bold text-[#0B1320]">{pool.name}</p>
+                          <p className="text-[13px] font-bold text-[#0B1320] dark:text-white">{pool.name}</p>
                           <p className="text-[10px] text-gray-400 font-medium uppercase tracking-wide">{pool.type}</p>
                         </div>
-                        <FinosIcon name="plus" size={16} className="text-gray-300" />
+                        <FinosIcon name="plus" size={16} className="text-gray-300 dark:text-gray-600" />
                       </button>
                     ))}
                   </div>
@@ -377,7 +371,7 @@ export default function AllocationPolicy() {
 
                 <button
                   onClick={() => setCustomMode(true)}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-[12px] border-2 border-dashed border-gray-200 text-gray-500 text-[13px] font-semibold active:border-gray-300 transition-all"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-[12px] border-2 border-dashed border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 text-[13px] font-semibold active:border-gray-300 dark:active:border-gray-600 transition-all"
                 >
                   <FinosIcon name="plus" size={16} />
                   Create Custom Allocation
@@ -387,7 +381,7 @@ export default function AllocationPolicy() {
               <>
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <h3 className="text-[15px] font-bold text-[#0B1320]">Custom Allocation</h3>
+                    <h3 className="text-[15px] font-bold text-[#0B1320] dark:text-white">Custom Allocation</h3>
                     <p className="text-[11px] text-gray-400 font-medium">Name it and pick a color</p>
                   </div>
                   <button
@@ -395,7 +389,7 @@ export default function AllocationPolicy() {
                       setCustomMode(false)
                       setCustomName('')
                     }}
-                    className="flex items-center justify-center w-8 h-8 rounded-xl active:bg-gray-100 transition-colors"
+                    className="flex items-center justify-center w-8 h-8 rounded-xl active:bg-gray-100 dark:active:bg-gray-800 transition-colors"
                   >
                     <FinosIcon name="x" size={18} className="text-gray-400" />
                   </button>
@@ -406,7 +400,7 @@ export default function AllocationPolicy() {
                   placeholder="Pool name (e.g. Travel Fund)"
                   value={customName}
                   onChange={(e) => setCustomName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-[12px] border border-gray-200 text-[13px] text-[#0B1320] placeholder:text-gray-300 focus:outline-none focus:border-[#0B1320] transition-colors mb-4"
+                  className="w-full px-4 py-3 rounded-[12px] border border-gray-200 dark:border-gray-700 text-[13px] text-[#0B1320] dark:text-white placeholder:text-gray-300 dark:placeholder:text-gray-600 focus:outline-none focus:border-[#0B1320] dark:focus:border-gray-500 transition-colors mb-4"
                   autoFocus
                 />
 
@@ -421,7 +415,7 @@ export default function AllocationPolicy() {
                       className={`flex items-center justify-center w-10 h-10 rounded-[10px] border-2 transition-all ${
                         customIcon === icon
                           ? 'border-[#0B1320] bg-[#0B1320]/5'
-                          : 'border-gray-100 active:border-gray-200'
+                          : 'border-gray-100 dark:border-gray-700 active:border-gray-200 dark:active:border-gray-600'
                       }`}
                     >
                       <FinosIcon

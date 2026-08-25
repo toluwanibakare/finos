@@ -26,7 +26,7 @@ export function BottomNav() {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-t border-black/[0.04]"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-[#1A2332]/90 backdrop-blur-xl border-t border-black/[0.04] dark:border-white/[0.08]"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
       <div className="flex items-center justify-around h-[68px] max-w-lg mx-auto px-1">
@@ -37,14 +37,14 @@ export function BottomNav() {
               key={tab.name}
               onClick={() => navigate(tab.path)}
               className={`flex flex-col items-center justify-center flex-1 h-full gap-[3px] transition-all duration-300 ${
-                active ? 'text-[#0B1320]' : 'text-gray-400'
+                active ? 'text-[#0B1320] dark:text-white' : 'text-gray-400'
               }`}
               aria-label={tab.label}
             >
               <FinosIcon
                 name={tab.icon}
                 size={21}
-                className={active ? 'text-[#0B1320]' : 'text-gray-400'}
+                className={active ? 'text-[#0B1320] dark:text-[#E8B931]' : 'text-gray-400'}
               />
               <span
                 className={`text-[10px] leading-none transition-all duration-300 ${

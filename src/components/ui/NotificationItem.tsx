@@ -30,8 +30,8 @@ export function NotificationItem({ notification, onClick }: NotificationItemProp
   return (
     <button
       onClick={() => onClick?.(notification)}
-      className={`flex items-start gap-3 w-full py-4 px-1 text-left transition-colors duration-150 active:bg-gray-50 ${
-        !notification.read ? 'bg-[#F0F4FF]/40' : ''
+      className={`flex items-start gap-3 w-full py-4 px-1 text-left transition-colors duration-150 active:bg-gray-50 dark:active:bg-gray-800 ${
+        !notification.read ? 'bg-[#F0F4FF]/40 dark:bg-[#E8B931]/10' : ''
       }`}
     >
       <div className={`flex items-center justify-center w-9 h-9 rounded-[10px] shrink-0 ${style.bg}`}>
@@ -40,7 +40,7 @@ export function NotificationItem({ notification, onClick }: NotificationItemProp
 
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
-          <p className={`text-[13px] leading-snug ${!notification.read ? 'font-bold text-[#0B1320]' : 'font-semibold text-gray-600'}`}>
+          <p className={`text-[13px] leading-snug ${!notification.read ? 'font-bold text-[#0B1320] dark:text-white' : 'font-semibold text-gray-600 dark:text-gray-300'}`}>
             {notification.title}
           </p>
           {!notification.read && (
@@ -50,7 +50,7 @@ export function NotificationItem({ notification, onClick }: NotificationItemProp
         <p className="text-[12px] text-gray-400 font-medium mt-0.5 line-clamp-2">
           {notification.body}
         </p>
-        <p className="text-[10px] text-gray-300 mt-1.5 font-medium">
+        <p className="text-[10px] text-gray-300 dark:text-gray-600 mt-1.5 font-medium">
           {formatDate(notification.date)}
         </p>
       </div>

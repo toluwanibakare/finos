@@ -24,7 +24,7 @@ export default function Notifications() {
             description="You are all caught up. Notifications will appear here."
           />
         ) : (
-          <div className="bg-white rounded-[20px] overflow-hidden divide-y divide-gray-50">
+          <div className="bg-white dark:bg-[#1A2332] rounded-[20px] overflow-hidden divide-y divide-gray-50 dark:divide-gray-700/50">
             {notifications.map((notif) => (
               <NotificationItem
                 key={notif.id}
