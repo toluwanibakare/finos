@@ -20,31 +20,31 @@ export default function Home() {
 
   return (
     <PageContainer padded={false}>
-      <div className="sticky top-0 z-40 bg-[#F7F8FB] dark:bg-[#013D7C]">
-        <div className="flex justify-center pt-2 pb-1">
-          <img src="/logo.PNG" alt="RUNDA" className="w-16 h-16 rounded-[14px] object-contain" />
+      <div className="sticky top-0 z-40 bg-[#F7F8FB] dark:bg-[#0B1320]">
+        <div className="flex justify-center py-0">
+          <img src="/logo.PNG" alt="RUNDA" className="w-[110px] h-[110px] rounded-[24px] object-contain" />
         </div>
+      </div>
 
-        <div className="flex items-center justify-between px-4 pb-3">
-          <div className="flex items-center gap-2.5">
-            <button
-              onClick={() => navigate('/more')}
-              className="flex items-center justify-center w-9 h-9 rounded-full bg-[#013D7C] dark:bg-[#E8B931] active:scale-95 transition-all duration-150 shrink-0"
-            >
-              <FinosIcon name="user" size={16} className="text-white dark:text-[#013D7C]" />
-            </button>
-            <div>
-              <p className="text-[11px] text-gray-400 dark:text-gray-500 font-medium leading-none mb-1">{getGreeting()}</p>
-              <p className="text-[17px] font-bold text-[#013D7C] dark:text-white tracking-[-0.02em] leading-none">{userProfile.name}</p>
-            </div>
-          </div>
+      <div className="flex items-center justify-between px-4 pt-1 pb-3">
+        <div className="flex items-center gap-2.5">
           <button
-            onClick={() => navigate('/notifications')}
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 active:bg-gray-200 dark:active:bg-gray-700 transition-colors duration-150"
+            onClick={() => navigate('/more')}
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-[#013D7C] dark:bg-[#E8B931] active:scale-95 transition-all duration-150 shrink-0"
           >
-            <FinosIcon name="bell" size={18} className="text-gray-500 dark:text-gray-400" />
+            <FinosIcon name="user" size={16} className="text-white dark:text-[#013D7C]" />
           </button>
+          <div>
+            <p className="text-[11px] text-gray-400 dark:text-gray-500 font-medium leading-none mb-1">{getGreeting()}</p>
+            <p className="text-[17px] font-bold text-[#013D7C] dark:text-white tracking-[-0.02em] leading-none">{userProfile.name}</p>
+          </div>
         </div>
+        <button
+          onClick={() => navigate('/notifications')}
+          className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 active:bg-gray-200 dark:active:bg-gray-700 transition-colors duration-150"
+        >
+          <FinosIcon name="bell" size={18} className="text-gray-500 dark:text-gray-400" />
+        </button>
       </div>
 
       <section className="px-4 animate-fade-in" style={{ animationDelay: '0ms' }}>
