@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useStore } from '../store/useStore'
 import { userProfile } from '../data/mockData'
-import { getGreeting } from '../lib/utils'
+import { getGreeting, formatNaira, getProgressPercent } from '../lib/utils'
 import { PageContainer } from '../components/layout/PageContainer'
 import { BalanceCard } from '../components/ui/BalanceCard'
 import { QuickAction } from '../components/ui/QuickAction'
@@ -13,8 +13,9 @@ export default function Home() {
   const navigate = useNavigate()
   const pools = useStore((s) => s.pools)
   const transactions = useStore((s) => s.transactions)
-  const recentTxns = transactions.slice(0, 5)
-
+  const goals = useStore((s) => s.goals)
+  const recentTxns = transactions.slice(0, 3)
+  const activeGoals = goals.filter((g) => g.state === 'active').slice(0, 2)
   const topLevelPools = pools.filter((p) => !p.parentId)
 
   return (
@@ -102,7 +103,53 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-6" />
+      {activeGoals.length > 0 && (
+        <section className="mt-6 px-4 animate-fade-in" style={{ animationDelay: '300ms' }}>
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-[14px] font-bold text-[#0B1320] tracking-[-0.01em]">Goals</h2>
+            <button
+              onClick={() => navigate('/goals')}
+              className="text-[12px] font-bold text-[#0B1320] opacity-40"
+            >
+              See all
+            </button>
+          </div>
+          <div className="space-y-2">
+            {activeGoals.map((goal) => {
+              const percent = getProgressPercent(goal.currentAmount, goal.targetAmount)
+              return (
+                <button
+                  key={goal.id}
+                  onClick={() => navigate(`/goal/${goal.id}`)}
+                  className="flex items-center gap-3.5 w-full bg-white rounded-[16px] px-4 py-3.5 text-left active:scale-[0.98] transition-all duration-200"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 rounded-[10px] bg-[#0B1320] shrink-0">
+                    <FinosIcon name="target" size={18} className="text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-[13px] font-bold text-[#0B1320] truncate">{goal.name}</span>
+                      <span className="text-[11px] font-bold text-gray-400 tabular-nums ml-2">{percent}%</span>
+                    </div>
+                    <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-[#0B1320] transition-all duration-700"
+                        style={{ width: `${percent}%` }}
+                      />
+                    </div>
+                    <div className="flex items-center justify-between mt-1.5">
+                      <span className="text-[11px] text-gray-400 font-medium">{formatNaira(goal.currentAmount)}</span>
+                      <span className="text-[10px] text-gray-300 font-medium">of {formatNaira(goal.targetAmount)}</span>
+                    </div>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
+        </section>
+      )}
+
+      <div className="h-2" />
     </PageContainer>
   )
 }
