@@ -8,7 +8,7 @@ function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
     <button
       onClick={onToggle}
       className={`w-11 h-6 rounded-full relative transition-colors duration-200 ${
-        on ? 'bg-[#0B1320]' : 'bg-gray-200 dark:bg-gray-700'
+        on ? 'bg-[#013D7C]' : 'bg-gray-200 dark:bg-gray-700'
       }`}
     >
       <div
@@ -34,7 +34,7 @@ export default function Privacy() {
               <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
                 <FinosIcon name="shield" size={16} className="text-gray-500 dark:text-gray-400" />
               </div>
-              <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">Biometric Lock</span>
+              <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white">Biometric Lock</span>
             </div>
             <Toggle on={biometric} onToggle={() => setBiometric(!biometric)} />
           </div>
@@ -43,7 +43,7 @@ export default function Privacy() {
               <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
                 <FinosIcon name="lock" size={16} className="text-gray-500 dark:text-gray-400" />
               </div>
-              <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">Change PIN</span>
+              <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white">Change PIN</span>
             </div>
             <FinosIcon name="chevron-right" size={16} className="text-gray-300 dark:text-gray-600" />
           </button>
@@ -52,7 +52,7 @@ export default function Privacy() {
               <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
                 <FinosIcon name="eye" size={16} className="text-gray-500 dark:text-gray-400" />
               </div>
-              <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">Hide Balances by Default</span>
+              <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white">Hide Balances by Default</span>
             </div>
             <Toggle on={hideBalance} onToggle={() => setHideBalance(!hideBalance)} />
           </div>

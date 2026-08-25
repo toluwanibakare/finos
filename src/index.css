@@ -12,7 +12,7 @@
   --color-navy-600: #2D4373;
   --color-navy-700: #1F2E4E;
   --color-navy-800: #141F35;
-  --color-navy-900: #0B1320;
+  --color-navy-900: #013D7C;
   --color-navy-950: #060A12;
 
   --color-slate-50: #F8FAFC;
@@ -53,7 +53,7 @@ body {
 
 .dark body,
 .dark #root {
-  background-color: #0B1320;
+  background-color: #013D7C;
   color: white;
 }
 
@@ -149,7 +149,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #0B1320;
+  background: #013D7C;
   cursor: pointer;
   box-shadow: 0 1px 6px rgba(11, 19, 32, 0.25);
   border: 3px solid white;
@@ -164,7 +164,7 @@ input[type="range"]::-moz-range-thumb {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #0B1320;
+  background: #013D7C;
   cursor: pointer;
   box-shadow: 0 1px 6px rgba(11, 19, 32, 0.25);
   border: 3px solid white;

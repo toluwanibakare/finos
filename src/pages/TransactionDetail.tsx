@@ -63,7 +63,7 @@ export default function TransactionDetail() {
       <div className="pt-4 space-y-4">
         {/* Amount header */}
         <div className="bg-white dark:bg-[#1A2332] rounded-[20px] p-6 text-center animate-fade-in">
-          <p className={`text-[32px] font-bold tracking-[-0.03em] tabular-nums ${isCredit ? 'text-[#2E7D32]' : 'text-[#0B1320] dark:text-white'}`}>
+          <p className={`text-[32px] font-bold tracking-[-0.03em] tabular-nums ${isCredit ? 'text-[#2E7D32]' : 'text-[#013D7C] dark:text-white'}`}>
             {isCredit ? '+' : txn.type === 'allocation' ? '' : '-'}{formatNaira(txn.amount)}
           </p>
           <p className="text-[13px] text-gray-400 font-medium mt-1">{txn.description}</p>
@@ -124,7 +124,7 @@ export default function TransactionDetail() {
                   <FinosIcon name="arrow-down-left" size={16} className="text-[#2E7D32]" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[13px] font-bold text-[#0B1320] dark:text-white">{relatedIncome.description}</p>
+                  <p className="text-[13px] font-bold text-[#013D7C] dark:text-white">{relatedIncome.description}</p>
                   <p className="text-[11px] text-gray-400 font-medium">{relatedIncome.reference}</p>
                 </div>
                 <span className="text-[13px] font-bold text-[#2E7D32] tabular-nums">
@@ -146,7 +146,7 @@ function DetailRow({ label, value, onClick }: { label: string; value: string; on
       onClick={onClick}
     >
       <span className="text-[12px] text-gray-400 font-medium">{label}</span>
-      <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white text-right max-w-[60%] break-words">
+      <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white text-right max-w-[60%] break-words">
         {value}
         {onClick && <FinosIcon name="chevron-right" size={14} className="text-gray-300 dark:text-gray-600 ml-1 inline" />}
       </span>

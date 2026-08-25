@@ -110,7 +110,7 @@ export default function AddIncome() {
                 onClick={() => setSource(s.key)}
                 className={`flex flex-col items-center gap-1.5 p-3 rounded-[14px] border transition-all duration-200 ${
                   source === s.key
-                    ? 'bg-[#0B1320] text-white border-[#0B1320]'
+                    ? 'bg-[#013D7C] text-white border-[#013D7C]'
                     : 'bg-white dark:bg-[#1A2332] text-gray-600 dark:text-gray-400 border-gray-100 dark:border-gray-700/50 active:border-gray-200 dark:active:border-gray-700'
                 }`}
               >
@@ -133,7 +133,7 @@ export default function AddIncome() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="e.g. Monthly salary"
-              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
+              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#013D7C] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
             />
           </div>
           <div>
@@ -143,7 +143,7 @@ export default function AddIncome() {
               value={reference}
               onChange={(e) => setReference(e.target.value)}
               placeholder="e.g. SAL-2026-08"
-              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
+              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#013D7C] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
             />
           </div>
           <div>
@@ -152,7 +152,7 @@ export default function AddIncome() {
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200"
+              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#013D7C] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200"
             />
           </div>
         </div>
@@ -161,7 +161,7 @@ export default function AddIncome() {
           <div className="animate-fade-in" style={{ animationDelay: '180ms' }}>
             <button
               onClick={() => setShowPreview(!showPreview)}
-              className="flex items-center gap-2 text-[12px] font-bold text-[#0B1320] dark:text-white mb-3"
+              className="flex items-center gap-2 text-[12px] font-bold text-[#013D7C] dark:text-white mb-3"
             >
               <FinosIcon name={showPreview ? 'chevron-up' : 'chevron-down'} size={14} />
               Allocation Preview
@@ -173,15 +173,15 @@ export default function AddIncome() {
                     <div key={a.poolId} className="flex items-center justify-between px-4 py-3">
                       <div className="flex items-center gap-2">
                         <span className="text-[11px] font-bold text-gray-400 tabular-nums">{a.percentage}%</span>
-                        <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">{a.poolName}</span>
+                        <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white">{a.poolName}</span>
                       </div>
-                      <span className="text-[13px] font-bold text-[#0B1320] dark:text-white tabular-nums">{formatNaira(a.amount)}</span>
+                      <span className="text-[13px] font-bold text-[#013D7C] dark:text-white tabular-nums">{formatNaira(a.amount)}</span>
                     </div>
                   ))}
                 </div>
                 <div className="flex items-center justify-between px-4 py-3 bg-[#F7F8FB] dark:bg-gray-800">
                   <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wide">Total</span>
-                  <span className="text-[13px] font-bold text-[#0B1320] dark:text-white tabular-nums">{formatNaira(numAmount)}</span>
+                  <span className="text-[13px] font-bold text-[#013D7C] dark:text-white tabular-nums">{formatNaira(numAmount)}</span>
                 </div>
               </div>
             )}
@@ -191,7 +191,7 @@ export default function AddIncome() {
         <button
           onClick={handleSubmit}
           disabled={!canSubmit}
-          className="w-full bg-[#0B1320] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed animate-fade-in"
+          className="w-full bg-[#013D7C] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed animate-fade-in"
           style={{ animationDelay: '240ms' }}
         >
           Add Income

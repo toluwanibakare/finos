@@ -35,7 +35,7 @@ export function Header({ title, showBack = false, onBack, rightAction, className
           {showBack && (
             <button
               onClick={handleBack}
-              className="flex items-center justify-center w-9 h-9 -ml-1 rounded-xl text-[#0B1320] dark:text-white active:bg-black/5 dark:active:bg-white/10 transition-colors duration-150"
+              className="flex items-center justify-center w-9 h-9 -ml-1 rounded-xl text-[#013D7C] dark:text-white active:bg-black/5 dark:active:bg-white/10 transition-colors duration-150"
               aria-label="Go back"
             >
               <FinosIcon name="chevron-left" size={20} />
@@ -43,7 +43,7 @@ export function Header({ title, showBack = false, onBack, rightAction, className
           )}
         </div>
 
-        <h1 className="text-[15px] font-bold text-[#0B1320] dark:text-white tracking-[-0.01em] truncate">
+        <h1 className="text-[15px] font-bold text-[#013D7C] dark:text-white tracking-[-0.01em] truncate">
           {title}
         </h1>
 

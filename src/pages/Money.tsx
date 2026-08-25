@@ -34,7 +34,7 @@ export default function Money() {
 
       <div className="pt-4 space-y-4">
         {/* Balance summary */}
-        <div className="bg-[#0B1320] rounded-[24px] p-6 text-white relative overflow-hidden animate-fade-in">
+        <div className="bg-[#013D7C] rounded-[24px] p-6 text-white relative overflow-hidden animate-fade-in">
           <div className="absolute -top-20 -right-20 w-56 h-56 rounded-full bg-white/[0.03]" />
           <div className="absolute -bottom-16 -left-16 w-40 h-40 rounded-full bg-[#1E3A7A]/30" />
           <div className="relative">
@@ -57,21 +57,21 @@ export default function Money() {
         <div className="grid grid-cols-3 gap-2.5 animate-fade-in" style={{ animationDelay: '80ms' }}>
           <div className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4">
             <p className="text-[10px] text-gray-400 font-medium tracking-wide uppercase mb-1">Savings</p>
-            <p className="text-[14px] font-bold text-[#0B1320] dark:text-white tabular-nums tracking-[-0.01em]">{formatNaira(savingsTotal)}</p>
+            <p className="text-[14px] font-bold text-[#013D7C] dark:text-white tabular-nums tracking-[-0.01em]">{formatNaira(savingsTotal)}</p>
           </div>
           <div className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4">
             <p className="text-[10px] text-gray-400 font-medium tracking-wide uppercase mb-1">Investments</p>
-            <p className="text-[14px] font-bold text-[#0B1320] dark:text-white tabular-nums tracking-[-0.01em]">{formatNaira(investmentTotal)}</p>
+            <p className="text-[14px] font-bold text-[#013D7C] dark:text-white tabular-nums tracking-[-0.01em]">{formatNaira(investmentTotal)}</p>
           </div>
           <div className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4">
             <p className="text-[10px] text-gray-400 font-medium tracking-wide uppercase mb-1">Emergency</p>
-            <p className="text-[14px] font-bold text-[#0B1320] dark:text-white tabular-nums tracking-[-0.01em]">{formatNaira(50000)}</p>
+            <p className="text-[14px] font-bold text-[#013D7C] dark:text-white tabular-nums tracking-[-0.01em]">{formatNaira(50000)}</p>
           </div>
         </div>
 
         {/* Monthly summary */}
         <div className="bg-white dark:bg-[#1A2332] rounded-[20px] p-5 animate-fade-in" style={{ animationDelay: '160ms' }}>
-          <h3 className="text-[13px] font-bold text-[#0B1320] dark:text-white mb-4 tracking-[-0.01em]">This Month</h3>
+          <h3 className="text-[13px] font-bold text-[#013D7C] dark:text-white mb-4 tracking-[-0.01em]">This Month</h3>
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -80,7 +80,7 @@ export default function Money() {
                 </div>
                 <div>
                   <p className="text-[10px] text-gray-400 font-medium tracking-wide uppercase">Income</p>
-                  <p className="text-[14px] font-bold text-[#0B1320] dark:text-white tabular-nums">{formatNaira(monthlyIncome)}</p>
+                  <p className="text-[14px] font-bold text-[#013D7C] dark:text-white tabular-nums">{formatNaira(monthlyIncome)}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -89,7 +89,7 @@ export default function Money() {
                 </div>
                 <div>
                   <p className="text-[10px] text-gray-400 font-medium tracking-wide uppercase">Spending</p>
-                  <p className="text-[14px] font-bold text-[#0B1320] dark:text-white tabular-nums">{formatNaira(monthlySpending)}</p>
+                  <p className="text-[14px] font-bold text-[#013D7C] dark:text-white tabular-nums">{formatNaira(monthlySpending)}</p>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function Money() {
             <div className="bg-[#F7F8FB] dark:bg-gray-800 rounded-[14px] p-3.5">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[11px] text-gray-400 font-medium">Net Savings</span>
-                <span className="text-[12px] font-bold text-[#0B1320] dark:text-white tabular-nums">{formatNaira(monthlySavings)}</span>
+                <span className="text-[12px] font-bold text-[#013D7C] dark:text-white tabular-nums">{formatNaira(monthlySavings)}</span>
               </div>
               <ProgressIndicator
                 percent={monthlyIncome > 0 ? Math.round((monthlySavings / monthlyIncome) * 100) : 0}
@@ -110,7 +110,7 @@ export default function Money() {
 
         {/* All Pools */}
         <div className="animate-fade-in" style={{ animationDelay: '240ms' }}>
-          <h3 className="text-[13px] font-bold text-[#0B1320] dark:text-white mb-3 tracking-[-0.01em]">All Pools</h3>
+          <h3 className="text-[13px] font-bold text-[#013D7C] dark:text-white mb-3 tracking-[-0.01em]">All Pools</h3>
           <div className="bg-white dark:bg-[#1A2332] rounded-[20px] divide-y divide-gray-100 dark:divide-gray-700/50 overflow-hidden">
             {topLevelPools.map((pool) => (
               <button
@@ -127,10 +127,10 @@ export default function Money() {
                   </span>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[13px] font-bold text-[#0B1320] dark:text-white truncate tracking-[-0.01em]">{pool.name}</p>
+                  <p className="text-[13px] font-bold text-[#013D7C] dark:text-white truncate tracking-[-0.01em]">{pool.name}</p>
                   <p className="text-[10px] text-gray-400 font-medium">{formatPercent(pool.allocationPercentage)} allocation</p>
                 </div>
-                <span className="text-[13px] font-bold text-[#0B1320] dark:text-white tabular-nums">
+                <span className="text-[13px] font-bold text-[#013D7C] dark:text-white tabular-nums">
                   {formatNaira(pool.balance)}
                 </span>
               </button>

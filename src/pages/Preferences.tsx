@@ -9,7 +9,7 @@ function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
     <button
       onClick={onToggle}
       className={`w-11 h-6 rounded-full relative transition-colors duration-200 ${
-        on ? 'bg-[#0B1320] dark:bg-[#E8B931]' : 'bg-gray-200 dark:bg-gray-700'
+        on ? 'bg-[#013D7C] dark:bg-[#E8B931]' : 'bg-gray-200 dark:bg-gray-700'
       }`}
     >
       <div
@@ -36,7 +36,7 @@ export default function Preferences() {
               <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
                 <FinosIcon name="bell" size={16} className="text-gray-500 dark:text-gray-400" />
               </div>
-              <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">Push Notifications</span>
+              <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white">Push Notifications</span>
             </div>
             <Toggle on={pushNotif} onToggle={() => setPushNotif(!pushNotif)} />
           </div>
@@ -45,7 +45,7 @@ export default function Preferences() {
               <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
                 <FinosIcon name="mail" size={16} className="text-gray-500 dark:text-gray-400" />
               </div>
-              <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">Email Notifications</span>
+              <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white">Email Notifications</span>
             </div>
             <Toggle on={emailNotif} onToggle={() => setEmailNotif(!emailNotif)} />
           </div>
@@ -54,7 +54,7 @@ export default function Preferences() {
               <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
                 <FinosIcon name="smartphone" size={16} className="text-gray-500 dark:text-gray-400" />
               </div>
-              <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">Currency</span>
+              <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white">Currency</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-[12px] text-gray-400 dark:text-gray-500 font-medium">NGN</span>
@@ -66,7 +66,7 @@ export default function Preferences() {
               <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
                 <FinosIcon name="moon" size={16} className="text-gray-500 dark:text-gray-400" />
               </div>
-              <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">Dark Mode</span>
+              <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white">Dark Mode</span>
             </div>
             <Toggle on={darkMode} onToggle={toggleDarkMode} />
           </div>

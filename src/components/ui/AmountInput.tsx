@@ -41,7 +41,7 @@ export function AmountInput({
         value={value}
         onChange={handleChange}
         placeholder={placeholder}
-        className="text-[40px] font-bold text-[#0B1320] dark:text-white bg-transparent text-center outline-none w-full placeholder:text-gray-200 dark:placeholder:text-gray-700 tabular-nums tracking-[-0.03em] caret-[#0B1320] dark:caret-white"
+        className="text-[40px] font-bold text-[#013D7C] dark:text-white bg-transparent text-center outline-none w-full placeholder:text-gray-200 dark:placeholder:text-gray-700 tabular-nums tracking-[-0.03em] caret-[#013D7C] dark:caret-white"
         autoComplete="off"
       />
     </div>

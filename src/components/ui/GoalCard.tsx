@@ -15,7 +15,7 @@ const stateConfig: Record<string, { label: string; className: string }> = {
 }
 
 const stateColors: Record<string, string> = {
-  active: '#0B1320',
+  active: '#013D7C',
   completed: '#2E7D32',
   paused: '#E65100',
   cancelled: '#9CA3AF',
@@ -34,7 +34,7 @@ export function GoalCard({ goal, onClick }: GoalCardProps) {
     >
       <div className="flex items-start justify-between mb-3.5">
         <div className="flex-1 min-w-0">
-          <h3 className="text-[15px] font-bold text-[#0B1320] dark:text-white truncate tracking-[-0.01em]">{goal.name}</h3>
+          <h3 className="text-[15px] font-bold text-[#013D7C] dark:text-white truncate tracking-[-0.01em]">{goal.name}</h3>
           <p className="text-[11px] text-gray-400 font-medium mt-0.5">
             Target: {formatNaira(goal.targetAmount)}
           </p>
@@ -48,7 +48,7 @@ export function GoalCard({ goal, onClick }: GoalCardProps) {
 
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-[16px] font-bold text-[#0B1320] dark:text-white tabular-nums tracking-[-0.02em]">{formatNaira(goal.currentAmount)}</p>
+          <p className="text-[16px] font-bold text-[#013D7C] dark:text-white tabular-nums tracking-[-0.02em]">{formatNaira(goal.currentAmount)}</p>
           <p className="text-[10px] text-gray-400 font-medium mt-0.5">{percent}% saved</p>
         </div>
         <div className="text-right">

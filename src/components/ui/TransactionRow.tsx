@@ -18,7 +18,7 @@ const typeConfig: Record<string, { icon: string; sign: string; color: string; bg
 export function TransactionRow({ transaction, onClick }: TransactionRowProps) {
   const config = typeConfig[transaction.type] || typeConfig.expense
   const isCredit = transaction.type === 'income'
-  const amountColor = isCredit ? 'text-[#2E7D32]' : 'text-[#0B1320]'
+  const amountColor = isCredit ? 'text-[#2E7D32]' : 'text-[#013D7C]'
 
   return (
     <button
@@ -30,7 +30,7 @@ export function TransactionRow({ transaction, onClick }: TransactionRowProps) {
       </div>
 
       <div className="flex-1 min-w-0">
-        <p className="text-[13px] font-bold text-[#0B1320] dark:text-white truncate tracking-[-0.01em]">
+        <p className="text-[13px] font-bold text-[#013D7C] dark:text-white truncate tracking-[-0.01em]">
           {transaction.description}
         </p>
         <p className="text-[11px] text-gray-400 font-medium mt-0.5">

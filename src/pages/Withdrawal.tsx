@@ -104,7 +104,7 @@ export default function Withdrawal() {
       <div className="pt-6 space-y-6">
         {step === 'select-pool' && (
           <div className="animate-fade-in">
-            <p className="text-[14px] font-bold text-[#0B1320] dark:text-white mb-1 tracking-[-0.01em]">Select a pool</p>
+            <p className="text-[14px] font-bold text-[#013D7C] dark:text-white mb-1 tracking-[-0.01em]">Select a pool</p>
             <p className="text-[12px] text-gray-400 font-medium mb-4">Choose where to withdraw from</p>
             <div className="space-y-2">
               {availablePools.map((pool) => (
@@ -122,9 +122,9 @@ export default function Withdrawal() {
                     </span>
                   </div>
                   <div className="flex-1 text-left">
-                    <p className="text-[13px] font-bold text-[#0B1320] dark:text-white">{pool.name}</p>
+                    <p className="text-[13px] font-bold text-[#013D7C] dark:text-white">{pool.name}</p>
                   </div>
-                  <span className="text-[14px] font-bold text-[#0B1320] dark:text-white tabular-nums">{formatNaira(pool.balance)}</span>
+                  <span className="text-[14px] font-bold text-[#013D7C] dark:text-white tabular-nums">{formatNaira(pool.balance)}</span>
                 </button>
               ))}
             </div>
@@ -147,14 +147,14 @@ export default function Withdrawal() {
                   value={reason}
                   onChange={(e) => { setReason(e.target.value); setError('') }}
                   placeholder="Enter reason for withdrawal"
-                  className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
+                  className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#013D7C] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
                 />
               </div>
             )}
             <button
               onClick={handleAmountConfirm}
               disabled={numAmount <= 0}
-              className="w-full mt-6 bg-[#0B1320] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200 disabled:opacity-30"
+              className="w-full mt-6 bg-[#013D7C] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200 disabled:opacity-30"
             >
               Continue
             </button>
@@ -163,7 +163,7 @@ export default function Withdrawal() {
 
         {step === 'enter-destination' && (
           <div className="animate-fade-in space-y-4">
-            <p className="text-[14px] font-bold text-[#0B1320] dark:text-white mb-1 tracking-[-0.01em]">Destination</p>
+            <p className="text-[14px] font-bold text-[#013D7C] dark:text-white mb-1 tracking-[-0.01em]">Destination</p>
             <div>
               <label className="text-[10px] font-bold text-gray-400 mb-1.5 block uppercase tracking-wider">Bank Account or Wallet</label>
               <input
@@ -171,7 +171,7 @@ export default function Withdrawal() {
                 value={destination}
                 onChange={(e) => { setDestination(e.target.value); setError('') }}
                 placeholder="e.g. 0123456789 - GTBank"
-                className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
+                className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#013D7C] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
               />
             </div>
             <div>
@@ -181,13 +181,13 @@ export default function Withdrawal() {
                 value={destinationName}
                 onChange={(e) => setDestinationName(e.target.value)}
                 placeholder="e.g. Toluwani"
-                className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
+                className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#013D7C] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
               />
             </div>
             {error && <p className="text-[12px] text-[#C62828] font-semibold">{error}</p>}
             <button
               onClick={handleDestinationConfirm}
-              className="w-full bg-[#0B1320] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200"
+              className="w-full bg-[#013D7C] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200"
             >
               Continue
             </button>
@@ -201,31 +201,31 @@ export default function Withdrawal() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[12px] text-gray-400 font-medium">Amount</span>
-                  <span className="text-[15px] font-bold text-[#0B1320] dark:text-white tabular-nums">{formatNaira(numAmount)}</span>
+                  <span className="text-[15px] font-bold text-[#013D7C] dark:text-white tabular-nums">{formatNaira(numAmount)}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-[12px] text-gray-400 font-medium">From Pool</span>
-                  <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">{selectedPool?.name}</span>
+                  <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white">{selectedPool?.name}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-[12px] text-gray-400 font-medium">Destination</span>
-                  <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white text-right max-w-[60%] break-words">{destination}</span>
+                  <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white text-right max-w-[60%] break-words">{destination}</span>
                 </div>
                 {destinationName && (
                   <div className="flex items-center justify-between">
                     <span className="text-[12px] text-gray-400 font-medium">Recipient</span>
-                    <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white">{destinationName}</span>
+                    <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white">{destinationName}</span>
                   </div>
                 )}
                 {reason && (
                   <div className="flex items-center justify-between">
                     <span className="text-[12px] text-gray-400 font-medium">Reason</span>
-                    <span className="text-[13px] font-semibold text-[#0B1320] dark:text-white text-right max-w-[60%] break-words">{reason}</span>
+                    <span className="text-[13px] font-semibold text-[#013D7C] dark:text-white text-right max-w-[60%] break-words">{reason}</span>
                   </div>
                 )}
                 <div className="border-t border-gray-100 dark:border-gray-700/50 pt-3 flex items-center justify-between">
                   <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wide">Remaining</span>
-                  <span className="text-[13px] font-bold text-[#0B1320] dark:text-white tabular-nums">
+                  <span className="text-[13px] font-bold text-[#013D7C] dark:text-white tabular-nums">
                     {formatNaira((selectedPool?.balance || 0) - numAmount)}
                   </span>
                 </div>
@@ -233,7 +233,7 @@ export default function Withdrawal() {
             </div>
             <button
               onClick={handleConfirm}
-              className="w-full bg-[#0B1320] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200"
+              className="w-full bg-[#013D7C] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200"
             >
               Confirm Withdrawal
             </button>
@@ -243,9 +243,9 @@ export default function Withdrawal() {
         {step === 'processing' && (
           <div className="flex flex-col items-center justify-center py-20 animate-fade-in">
             <div className="w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4">
-              <FinosIcon name="loader" size={28} className="text-[#0B1320] dark:text-white animate-spin" />
+              <FinosIcon name="loader" size={28} className="text-[#013D7C] dark:text-white animate-spin" />
             </div>
-            <p className="text-[14px] font-bold text-[#0B1320] dark:text-white">Processing your withdrawal</p>
+            <p className="text-[14px] font-bold text-[#013D7C] dark:text-white">Processing your withdrawal</p>
             <p className="text-[12px] text-gray-400 font-medium mt-1">Please wait...</p>
           </div>
         )}
@@ -255,13 +255,13 @@ export default function Withdrawal() {
             <div className="w-16 h-16 rounded-full bg-[#E8F5E9] flex items-center justify-center mb-4">
               <FinosIcon name="check-circle" size={32} className="text-[#2E7D32]" />
             </div>
-            <p className="text-[16px] font-bold text-[#0B1320] dark:text-white">Withdrawal Successful</p>
+            <p className="text-[16px] font-bold text-[#013D7C] dark:text-white">Withdrawal Successful</p>
             <p className="text-[13px] text-gray-400 font-medium mt-1">
               {formatNaira(numAmount)} sent to {destinationName || destination}
             </p>
             <button
               onClick={() => navigate('/')}
-              className="mt-8 w-full max-w-[280px] bg-[#0B1320] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200"
+              className="mt-8 w-full max-w-[280px] bg-[#013D7C] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200"
             >
               Back to Home
             </button>
@@ -273,12 +273,12 @@ export default function Withdrawal() {
             <div className="w-16 h-16 rounded-full bg-[#FFEBEE] flex items-center justify-center mb-4">
               <FinosIcon name="x-circle" size={32} className="text-[#C62828]" />
             </div>
-            <p className="text-[16px] font-bold text-[#0B1320] dark:text-white">Withdrawal Failed</p>
+            <p className="text-[16px] font-bold text-[#013D7C] dark:text-white">Withdrawal Failed</p>
             <p className="text-[13px] text-gray-400 font-medium mt-1">Something went wrong. Please try again.</p>
             <div className="flex gap-3 mt-8 w-full max-w-[280px]">
               <button
                 onClick={() => { setStep('confirm'); setError('') }}
-                className="flex-1 bg-[#0B1320] text-white text-[13px] font-bold py-3 rounded-[12px] active:scale-[0.98] transition-all duration-200"
+                className="flex-1 bg-[#013D7C] text-white text-[13px] font-bold py-3 rounded-[12px] active:scale-[0.98] transition-all duration-200"
               >
                 Retry
               </button>

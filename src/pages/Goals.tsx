@@ -30,7 +30,7 @@ export default function Goals() {
         rightAction={
           <button
             onClick={() => navigate('/goals/new')}
-            className="flex items-center justify-center w-9 h-9 -mr-1 rounded-xl text-[#0B1320] dark:text-white active:bg-black/5 dark:active:bg-white/10 transition-colors duration-150"
+            className="flex items-center justify-center w-9 h-9 -mr-1 rounded-xl text-[#013D7C] dark:text-white active:bg-black/5 dark:active:bg-white/10 transition-colors duration-150"
           >
             <span className="text-[22px] font-light leading-none">+</span>
           </button>
@@ -45,7 +45,7 @@ export default function Goals() {
               onClick={() => setActiveFilter(tab.key)}
               className={`shrink-0 px-4 py-2 rounded-[10px] text-[12px] font-bold transition-all duration-200 ${
                 activeFilter === tab.key
-                  ? 'bg-[#0B1320] text-white'
+                  ? 'bg-[#013D7C] text-white'
                   : 'bg-white dark:bg-[#1A2332] text-gray-500 dark:text-gray-400'
               }`}
             >

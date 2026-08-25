@@ -58,7 +58,7 @@ export function PinLogin() {
   const dots = Array.from({ length: 4 }, (_, i) => i < digits.length)
 
   return (
-    <div className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#0B1320] transition-all duration-500">
+    <div className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#013D7C] transition-all duration-500">
       <div className={`flex flex-col items-center transition-all duration-500 ${success ? 'scale-110 opacity-0' : 'scale-100 opacity-100'}`}>
         <div className="flex items-center justify-center w-20 h-20 rounded-[22px] mb-6 animate-scale-in">
           <img src="/logo.PNG" alt="RUNDA" className="w-20 h-20 rounded-[22px] object-cover" />
@@ -101,7 +101,7 @@ export function PinLogin() {
               <button
                 key={key}
                 onClick={() => handleDigit(key)}
-                className="flex items-center justify-center h-16 rounded-2xl bg-white/[0.06] text-white text-[22px] font-semibold active:bg-[#E8B931] active:text-[#0B1320] transition-all duration-150 active:scale-95"
+                className="flex items-center justify-center h-16 rounded-2xl bg-white/[0.06] text-white text-[22px] font-semibold active:bg-[#E8B931] active:text-[#013D7C] transition-all duration-150 active:scale-95"
               >
                 {key}
               </button>

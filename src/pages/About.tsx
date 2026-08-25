@@ -8,7 +8,7 @@ export default function About() {
       <div className="pt-4 space-y-4">
         <div className="bg-white dark:bg-[#1A2332] rounded-[20px] p-5 text-center">
           <img src="/logo.PNG" alt="RUNDA" className="w-16 h-16 rounded-[20px] object-cover mx-auto mb-4" />
-          <p className="text-[18px] font-bold text-[#0B1320] dark:text-white tracking-[-0.02em]">RUNDA</p>
+          <p className="text-[18px] font-bold text-[#013D7C] dark:text-white tracking-[-0.02em]">RUNDA</p>
           <p className="text-[12px] text-gray-400 font-medium mt-1">Personal Financial Operating System</p>
           <p className="text-[11px] text-gray-300 dark:text-gray-600 font-medium mt-1">Version 1.0.0</p>
         </div>
@@ -26,7 +26,7 @@ export default function About() {
           className="flex items-center justify-center gap-2 bg-white dark:bg-[#1A2332] rounded-[20px] px-4 py-4 active:bg-gray-50 dark:active:bg-gray-800 transition-colors"
         >
           <span className="text-[12px] text-gray-400 font-medium">Built by</span>
-          <span className="text-[13px] font-bold text-[#0B1320] dark:text-[#E8B931]">TMB</span>
+          <span className="text-[13px] font-bold text-[#013D7C] dark:text-[#E8B931]">TMB</span>
         </a>
       </div>
     </PageContainer>

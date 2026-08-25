@@ -37,14 +37,14 @@ export function BottomNav() {
               key={tab.name}
               onClick={() => navigate(tab.path)}
               className={`flex flex-col items-center justify-center flex-1 h-full gap-[3px] transition-all duration-300 ${
-                active ? 'text-[#0B1320] dark:text-white' : 'text-gray-400'
+                active ? 'text-[#013D7C] dark:text-white' : 'text-gray-400'
               }`}
               aria-label={tab.label}
             >
               <FinosIcon
                 name={tab.icon}
                 size={21}
-                className={active ? 'text-[#0B1320] dark:text-[#E8B931]' : 'text-gray-400'}
+                className={active ? 'text-[#013D7C] dark:text-[#E8B931]' : 'text-gray-400'}
               />
               <span
                 className={`text-[10px] leading-none transition-all duration-300 ${

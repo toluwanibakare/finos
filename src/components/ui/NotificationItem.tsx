@@ -40,11 +40,11 @@ export function NotificationItem({ notification, onClick }: NotificationItemProp
 
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
-          <p className={`text-[13px] leading-snug ${!notification.read ? 'font-bold text-[#0B1320] dark:text-white' : 'font-semibold text-gray-600 dark:text-gray-300'}`}>
+          <p className={`text-[13px] leading-snug ${!notification.read ? 'font-bold text-[#013D7C] dark:text-white' : 'font-semibold text-gray-600 dark:text-gray-300'}`}>
             {notification.title}
           </p>
           {!notification.read && (
-            <span className="w-2 h-2 rounded-full bg-[#0B1320] shrink-0 mt-1.5" />
+            <span className="w-2 h-2 rounded-full bg-[#013D7C] shrink-0 mt-1.5" />
           )}
         </div>
         <p className="text-[12px] text-gray-400 font-medium mt-0.5 line-clamp-2">

@@ -52,7 +52,7 @@ export default function More() {
         <div className="flex items-center gap-4 bg-white dark:bg-[#1A2332] rounded-[20px] p-5 mb-6 animate-fade-in">
           <img src="/logo.PNG" alt="T" className="w-14 h-14 rounded-full object-cover shrink-0" />
           <div className="flex-1 min-w-0">
-            <p className="text-[15px] font-bold text-[#0B1320] dark:text-white tracking-[-0.01em]">{userProfile.name}</p>
+            <p className="text-[15px] font-bold text-[#013D7C] dark:text-white tracking-[-0.01em]">{userProfile.name}</p>
             <p className="text-[12px] text-gray-400 font-medium mt-0.5">tolu@email.com</p>
           </div>
           <FinosIcon name="chevron-right" size={16} className="text-gray-300 dark:text-gray-600" />
@@ -81,7 +81,7 @@ export default function More() {
                     <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
                       <FinosIcon name={item.icon} size={16} className="text-gray-500 dark:text-gray-400" />
                     </div>
-                    <span className="flex-1 text-[13px] font-semibold text-[#0B1320] dark:text-white">
+                    <span className="flex-1 text-[13px] font-semibold text-[#013D7C] dark:text-white">
                       {item.label}
                     </span>
                     <div className="flex items-center gap-2">
@@ -106,7 +106,7 @@ export default function More() {
           <div className="flex items-center justify-center w-8 h-8 rounded-[8px] bg-gray-50 dark:bg-gray-800">
             <FinosIcon name="lock" size={16} className="text-gray-500 dark:text-gray-400" />
           </div>
-          <span className="flex-1 text-[13px] font-semibold text-[#0B1320] dark:text-white">Lock App</span>
+          <span className="flex-1 text-[13px] font-semibold text-[#013D7C] dark:text-white">Lock App</span>
           <FinosIcon name="chevron-right" size={16} className="text-gray-300 dark:text-gray-600" />
         </button>
 

@@ -20,7 +20,7 @@ export function SplashScreen({ onFinish }: SplashScreenProps) {
 
   return (
     <div className={`fixed inset-0 z-[300] flex flex-col items-center justify-center transition-colors duration-500 ${
-      darkMode ? 'bg-[#0B1320]' : 'bg-white'
+      darkMode ? 'bg-[#013D7C]' : 'bg-white'
     }`}>
       <div className={`transition-all duration-700 ${visible ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}>
         <img src="/logo.PNG" alt="RUNDA" className="w-24 h-24 rounded-[28px] object-contain" />

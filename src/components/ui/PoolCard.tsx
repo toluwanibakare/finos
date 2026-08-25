@@ -24,14 +24,14 @@ export function PoolCard({ pool, onClick }: PoolCardProps) {
 
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
-          <span className="text-[14px] font-bold text-[#0B1320] dark:text-white truncate tracking-[-0.01em]">{pool.name}</span>
+          <span className="text-[14px] font-bold text-[#013D7C] dark:text-white truncate tracking-[-0.01em]">{pool.name}</span>
         </div>
         <span className="text-[11px] text-gray-400 font-medium mt-0.5 block">
           {formatPercent(pool.allocationPercentage)} allocation
         </span>
       </div>
 
-      <span className="text-[15px] font-bold text-[#0B1320] dark:text-white tabular-nums whitespace-nowrap tracking-[-0.01em]">
+      <span className="text-[15px] font-bold text-[#013D7C] dark:text-white tabular-nums whitespace-nowrap tracking-[-0.01em]">
         {formatNaira(pool.balance)}
       </span>
     </button>

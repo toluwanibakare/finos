@@ -43,7 +43,7 @@ export function BottomSheet({ isOpen, onClose, title, children, className = '' }
         <div className="flex items-center justify-between px-5 pt-4 pb-2">
           <div className="w-8" />
           {title && (
-            <h2 className="text-[15px] font-bold text-[#0B1320] dark:text-white">{title}</h2>
+            <h2 className="text-[15px] font-bold text-[#013D7C] dark:text-white">{title}</h2>
           )}
           <button
             onClick={onClose}

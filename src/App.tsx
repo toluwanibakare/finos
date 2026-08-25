@@ -48,7 +48,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-dvh flex flex-col bg-[#F7F8FB] dark:bg-[#0B1320] transition-colors">
+      <div className="min-h-dvh flex flex-col bg-[#F7F8FB] dark:bg-[#013D7C] transition-colors">
         <div className="flex-1 pb-[68px]">
           <Routes>
             <Route path="/" element={<Home />} />

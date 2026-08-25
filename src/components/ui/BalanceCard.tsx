@@ -16,7 +16,7 @@ export function BalanceCard() {
   const masked = '****'
 
   return (
-    <div className="relative overflow-hidden rounded-[24px] bg-[#0B1320] px-6 pt-7 pb-6 text-white">
+    <div className="relative overflow-hidden rounded-[24px] bg-[#013D7C] px-6 pt-7 pb-6 text-white">
       {/* Decorative elements */}
       <div className="absolute -top-20 -right-20 w-56 h-56 rounded-full bg-white/[0.03]" />
       <div className="absolute -bottom-16 -left-16 w-40 h-40 rounded-full bg-[#1E3A7A]/30" />

@@ -103,7 +103,7 @@ export default function AddExpense() {
           <div className="bg-white dark:bg-[#1A2332] rounded-[16px] p-4 animate-fade-in" style={{ animationDelay: '100ms' }}>
             <div className="flex items-center justify-between mb-2">
               <span className="text-[11px] text-gray-400 font-medium">Available in {selectedPool.name}</span>
-              <span className="text-[13px] font-bold text-[#0B1320] dark:text-white tabular-nums">{formatNaira(selectedPool.balance)}</span>
+              <span className="text-[13px] font-bold text-[#013D7C] dark:text-white tabular-nums">{formatNaira(selectedPool.balance)}</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-[11px] text-gray-400 font-medium">Being spent</span>
@@ -111,7 +111,7 @@ export default function AddExpense() {
             </div>
             <div className="border-t border-gray-100 dark:border-gray-700/50 mt-2 pt-2 flex items-center justify-between">
               <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wide">Remaining</span>
-              <span className={`text-[14px] font-bold tabular-nums ${isInsufficient ? 'text-[#C62828]' : 'text-[#0B1320] dark:text-white'}`}>
+              <span className={`text-[14px] font-bold tabular-nums ${isInsufficient ? 'text-[#C62828]' : 'text-[#013D7C] dark:text-white'}`}>
                 {formatNaira(remainingBalance)}
               </span>
             </div>
@@ -130,7 +130,7 @@ export default function AddExpense() {
                 onClick={() => setCategory(cat)}
                 className={`px-3.5 py-2 rounded-[10px] text-[12px] font-bold border transition-all duration-200 ${
                   category === cat
-                    ? 'bg-[#0B1320] text-white border-[#0B1320]'
+                    ? 'bg-[#013D7C] text-white border-[#013D7C]'
                     : 'bg-white dark:bg-[#1A2332] text-gray-600 dark:text-gray-400 border-gray-100 dark:border-gray-700/50 active:border-gray-200 dark:active:border-gray-700'
                 }`}
               >
@@ -148,7 +148,7 @@ export default function AddExpense() {
               value={merchant}
               onChange={(e) => setMerchant(e.target.value)}
               placeholder="e.g. Shoprite"
-              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
+              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#013D7C] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
             />
           </div>
           {requiresReason && (
@@ -161,7 +161,7 @@ export default function AddExpense() {
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 placeholder="Required for this pool"
-                className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
+                className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#013D7C] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600"
               />
             </div>
           )}
@@ -172,7 +172,7 @@ export default function AddExpense() {
               onChange={(e) => setNote(e.target.value)}
               placeholder="Any additional details..."
               rows={2}
-              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600 resize-none"
+              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#013D7C] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200 placeholder:text-gray-300 dark:placeholder:text-gray-600 resize-none"
             />
           </div>
           <div>
@@ -181,7 +181,7 @@ export default function AddExpense() {
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#0B1320] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200"
+              className="w-full bg-white dark:bg-[#1A2332] rounded-[12px] px-4 py-3 text-[13px] text-[#013D7C] dark:text-white outline-none border border-gray-100 dark:border-gray-700/50 focus:border-gray-300 dark:focus:border-gray-600 transition-colors duration-200"
             />
           </div>
         </div>
@@ -189,7 +189,7 @@ export default function AddExpense() {
         <button
           onClick={handleSubmit}
           disabled={!canSubmit}
-          className="w-full bg-[#0B1320] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed animate-fade-in"
+          className="w-full bg-[#013D7C] text-white text-[14px] font-bold py-3.5 rounded-[14px] active:scale-[0.98] transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed animate-fade-in"
           style={{ animationDelay: '240ms' }}
         >
           Add Expense
@@ -206,7 +206,7 @@ function PoolSelectItem({ pool, selected, onSelect }: { pool: Pool; selected: bo
       onClick={onSelect}
       className={`flex items-center gap-3 w-full p-3 rounded-[14px] border transition-all duration-200 ${
         selected
-          ? 'border-[#0B1320] bg-[#F0F4FF]'
+          ? 'border-[#013D7C] bg-[#F0F4FF]'
           : 'border-gray-100 dark:border-gray-700/50 bg-white dark:bg-[#1A2332] active:border-gray-200 dark:active:border-gray-700'
       }`}
     >
@@ -219,14 +219,14 @@ function PoolSelectItem({ pool, selected, onSelect }: { pool: Pool; selected: bo
         </span>
       </div>
       <div className="flex-1 min-w-0 text-left">
-        <p className="text-[13px] font-bold text-[#0B1320] dark:text-white">{pool.name}</p>
+        <p className="text-[13px] font-bold text-[#013D7C] dark:text-white">{pool.name}</p>
         {isRestricted && (
           <p className="text-[10px] text-[#E65100] font-bold uppercase tracking-wide">{pool.restriction.replace('_', ' ')}</p>
         )}
       </div>
-      <span className="text-[12px] font-bold text-[#0B1320] dark:text-white tabular-nums">{formatNaira(pool.balance)}</span>
+      <span className="text-[12px] font-bold text-[#013D7C] dark:text-white tabular-nums">{formatNaira(pool.balance)}</span>
       {selected && (
-        <div className="w-5 h-5 rounded-full bg-[#0B1320] flex items-center justify-center shrink-0">
+        <div className="w-5 h-5 rounded-full bg-[#013D7C] flex items-center justify-center shrink-0">
           <FinosIcon name="check" size={12} className="text-white" />
         </div>
       )}
