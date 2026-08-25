@@ -1,0 +1,110 @@
+import { create } from 'zustand'
+import type { Pool, Transaction, AllocationPolicy, SavingsGoal, Notification, Income } from '../types'
+import { defaultPools, defaultPolicy, mockTransactions, mockGoals, mockNotifications, mockIncome } from '../data/mockData'
+
+interface AppState {
+  balanceHidden: boolean
+  toggleBalance: () => void
+
+  pools: Pool[]
+  setPools: (pools: Pool[]) => void
+  updatePool: (id: string, updates: Partial<Pool>) => void
+
+  transactions: Transaction[]
+  addTransaction: (txn: Transaction) => void
+
+  policies: AllocationPolicy[]
+  addPolicy: (policy: AllocationPolicy) => void
+  updatePolicy: (id: string, updates: Partial<AllocationPolicy>) => void
+
+  goals: SavingsGoal[]
+  addGoal: (goal: SavingsGoal) => void
+  updateGoal: (id: string, updates: Partial<SavingsGoal>) => void
+
+  notifications: Notification[]
+  markNotificationRead: (id: string) => void
+  unreadCount: () => number
+
+  incomes: Income[]
+  addIncome: (income: Income) => void
+
+  getTotalBalance: () => number
+  getAvailableBalance: () => number
+  getReservedBalance: () => number
+  getMonthlyIncome: () => number
+  getMonthlySpending: () => number
+}
+
+export const useStore = create<AppState>((set, get) => ({
+  balanceHidden: false,
+  toggleBalance: () => set((s) => ({ balanceHidden: !s.balanceHidden })),
+
+  pools: defaultPools,
+  setPools: (pools) => set({ pools }),
+  updatePool: (id, updates) =>
+    set((s) => ({
+      pools: s.pools.map((p) => (p.id === id ? { ...p, ...updates } : p)),
+    })),
+
+  transactions: mockTransactions,
+  addTransaction: (txn) => set((s) => ({ transactions: [txn, ...s.transactions] })),
+
+  policies: [defaultPolicy],
+  addPolicy: (policy) => set((s) => ({ policies: [...s.policies, policy] })),
+  updatePolicy: (id, updates) =>
+    set((s) => ({
+      policies: s.policies.map((p) => (p.id === id ? { ...p, ...updates } : p)),
+    })),
+
+  goals: mockGoals,
+  addGoal: (goal) => set((s) => ({ goals: [...s.goals, goal] })),
+  updateGoal: (id, updates) =>
+    set((s) => ({
+      goals: s.goals.map((g) => (g.id === id ? { ...g, ...updates } : g)),
+    })),
+
+  notifications: mockNotifications,
+  markNotificationRead: (id) =>
+    set((s) => ({
+      notifications: s.notifications.map((n) =>
+        n.id === id ? { ...n, read: true } : n
+      ),
+    })),
+  unreadCount: () => get().notifications.filter((n) => !n.read).length,
+
+  incomes: mockIncome,
+  addIncome: (income) => set((s) => ({ incomes: [income, ...s.incomes] })),
+
+  getTotalBalance: () => get().pools.reduce((sum, p) => sum + p.balance, 0),
+  getAvailableBalance: () =>
+    get()
+      .pools.filter((p) => p.restriction === 'available')
+      .reduce((sum, p) => sum + p.balance, 0),
+  getReservedBalance: () =>
+    get()
+      .pools.filter((p) => p.restriction !== 'available')
+      .reduce((sum, p) => sum + p.balance, 0),
+  getMonthlyIncome: () => {
+    const now = new Date()
+    const year = now.getFullYear()
+    const month = now.getMonth()
+    return get()
+      .incomes.filter((i) => {
+        const d = new Date(i.date)
+        return d.getFullYear() === year && d.getMonth() === month
+      })
+      .reduce((sum, i) => sum + i.amount, 0)
+  },
+  getMonthlySpending: () => {
+    const now = new Date()
+    const year = now.getFullYear()
+    const month = now.getMonth()
+    return get()
+      .transactions.filter((t) => {
+        if (t.type !== 'expense') return false
+        const d = new Date(t.date)
+        return d.getFullYear() === year && d.getMonth() === month
+      })
+      .reduce((sum, t) => sum + t.amount, 0)
+  },
+}))

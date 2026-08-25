@@ -1,0 +1,897 @@
+Personal Financial Operating System — Frontend Build Prompt
+Build a premium, mobile-first personal financial operating system as a Progressive Web App (PWA).
+
+This is initially a private, single-user financial management system designed for one person. However, architect the frontend and data structures cleanly enough that the product can later evolve into a multi-user fintech startup.
+
+The application should NOT initially be presented as a bank. It is a personal financial operating system that helps the user automatically allocate incoming money into purpose-based financial pools, control how those pools can be spent, track every financial transaction, manage savings goals, and understand their overall financial behavior.
+
+The product should feel like a premium Nigerian fintech application.
+
+Use modern Nigerian fintech applications such as Kuda and OPay as UX inspiration only. Study their current mobile navigation patterns, information hierarchy, transaction presentation, balance visibility, quick actions, savings presentation, notification patterns, spacing and interaction design. Do NOT copy their visual identity, layouts, assets, logos, illustrations or exact components.
+
+Kuda’s current app emphasizes a clean home screen, quick access to common financial actions, search, savings/investments, account actions and notifications. OPay emphasizes a financial dashboard, transfers, savings, balance privacy and transaction activity. Use these as UX references while creating a completely original product identity.
+
+Core Product Concept
+The central idea is:
+
+“Every naira should have a job.”
+
+When money enters the user’s financial account, the system automatically distributes that income across predefined financial pools according to the user’s allocation policy.
+
+Example:
+
+Income received: ₦500,000
+
+Needs: 40%
+Savings: 15%
+Emergency: 10%
+Learning: 7%
+Investment: 10%
+Fun: 8%
+Giving: 5%
+Flexible: 5%
+
+The user should not have to manually perform these allocations.
+
+The application should calculate and display them automatically.
+
+The initial allocation policy will be supplied separately and must be treated as the default configuration. Do not invent the final percentages or policy rules.
+
+The system must be designed so the user can later modify percentages, create pools, delete pools, change pool restrictions, create new allocation policies and configure different policies for different income sources.
+
+Product Philosophy
+The application should not feel like a traditional budgeting application.
+
+It should feel like a personal financial control system.
+
+The user should be able to open the app and immediately understand:
+
+How much money exists
+How much is actually available to spend
+How much is reserved
+What each portion of the money is meant for
+What financial goals are currently active
+What happened recently
+Whether the user’s financial behavior is following their plan
+The interface should make financial discipline feel effortless.
+
+Design Direction
+Mobile first.
+
+Design primarily for modern smartphones.
+
+The desktop version should be responsive, but mobile is the primary product experience.
+
+The PWA should feel like a native mobile financial application.
+
+Use:
+
+Premium fintech aesthetic
+Clean white/light surfaces
+Deep blue as the primary brand direction
+Subtle secondary blue tones
+Very restrained use of gradients
+High contrast typography
+Large but controlled numbers
+Generous spacing
+Rounded cards
+Soft borders
+Subtle shadows
+Smooth transitions
+Excellent hierarchy
+Minimal visual noise
+You may explore a blue/white identity with a small amount of deeper navy for contrast.
+
+Do NOT make the interface look like a generic SaaS dashboard.
+
+Do NOT use excessive gradients.
+
+Do NOT use excessive glassmorphism.
+
+Do NOT use huge decorative illustrations.
+
+Do NOT use generic AI-generated fintech illustrations.
+
+Do NOT use unnecessary emojis anywhere in the application.
+
+Use icons instead of emojis.
+
+Icon System
+Create an original, cohesive icon language for the application.
+
+Icons should be:
+
+Minimal
+Geometric
+Premium
+Consistent
+Fintech appropriate
+Slightly distinctive
+Easy to recognize at small sizes
+Do not simply scatter generic Lucide/Font Awesome icons throughout the interface.
+
+Use a consistent custom visual treatment for icons.
+
+The icons should feel like they belong to one product.
+
+Important icons should have custom-designed containers or visual treatments where appropriate.
+
+Do not make icons overly decorative.
+
+Typography
+Use a premium modern sans-serif.
+
+Prioritize excellent readability.
+
+Financial numbers should have strong visual hierarchy.
+
+Examples:
+
+₦850,000
+
+₦120,000
+
+₦1,500,000
+
+Large financial figures should be visually prominent without overwhelming the screen.
+
+Use different font weights carefully.
+
+Do not use excessive font sizes.
+
+Main Navigation
+Use a bottom navigation system optimized for one-handed mobile usage.
+
+Recommended primary navigation:
+
+Home
+Money
+Goals
+Activity
+More
+
+The navigation should remain simple.
+
+Do not overload the bottom navigation.
+
+Secondary actions should live inside contextual screens or the More section.
+
+HOME
+The home screen is the most important screen.
+
+It should immediately communicate the user’s financial state.
+
+Top area:
+
+Greeting
+
+Example:
+
+Good morning, Tokunbo
+
+Then a balance section:
+
+Total Money
+
+₦850,000
+
+Include a small privacy control that allows the user to hide/show balances.
+
+Example:
+
+₦••••••
+
+The privacy interaction should be smooth and immediate.
+
+Below the total balance, show:
+
+Available to Spend
+
+₦210,000
+
+Reserved
+
+₦640,000
+
+Make the difference between total money and spendable money extremely clear.
+
+Do not make the user calculate it.
+
+Quick Actions
+Provide a small set of important quick actions.
+
+Examples:
+
+Add Income
+Add Expense
+Transfer
+Allocate
+View Activity
+
+Use compact premium buttons.
+
+Do not fill the screen with actions.
+
+Financial Pools
+Create a horizontal scrollable or intelligently stacked pool section.
+
+Example:
+
+Needs
+₦200,000
+
+Savings
+₦75,000
+
+Emergency
+₦50,000
+
+Learning
+₦35,000
+
+Investment
+₦50,000
+
+Fun
+₦40,000
+
+Each pool should have:
+
+Pool icon
+Pool name
+Current amount
+Optional percentage
+Optional progress indicator
+Restriction state
+
+Restricted pools should visually communicate that money is reserved without making the UI feel hostile.
+
+Pool Detail
+When the user opens a pool, show:
+
+Pool name
+Current balance
+Allocation percentage
+Purpose
+Policy
+Goal if applicable
+Recent transactions
+Available amount
+Restricted amount
+Progress toward goal
+
+Example:
+
+MacBook Fund
+
+₦450,000
+
+Target
+₦1,500,000
+
+Progress
+30%
+
+Allocated from every salary:
+15%
+
+Then show recent activity.
+
+For restricted pools, clearly explain why spending is unavailable.
+
+Example:
+
+“Locked until your savings goal is reached.”
+
+Do not merely disable buttons without explaining why.
+
+MONEY
+Create a dedicated money overview screen.
+
+Show:
+
+Total money
+Available money
+Reserved money
+Savings
+Investments
+Emergency funds
+Monthly income
+Monthly spending
+
+Use clean cards and visual summaries.
+
+This screen should answer:
+
+“Where is my money?”
+
+INCOME
+Create an income management experience.
+
+The user should be able to add income manually during the initial version.
+
+Income fields:
+
+Amount
+Income source
+Date
+Description
+Reference
+Allocation policy
+
+Income sources should support:
+
+Salary
+Freelance
+Business
+Investment
+Gift
+Other
+
+Each income source should be capable of having a different allocation policy later.
+
+The UI should show what will happen to the money before confirming.
+
+Example:
+
+₦500,000 incoming
+
+Will be allocated:
+
+Needs ₦200,000
+Savings ₦75,000
+Emergency ₦50,000
+Learning ₦35,000
+Investment ₦50,000
+Fun ₦40,000
+Giving ₦25,000
+Flexible ₦25,000
+
+This preview is extremely important.
+
+EXPENSE
+Create a clean expense flow.
+
+Fields:
+
+Amount
+Pool
+Category
+Merchant
+Reason
+Date
+Optional note
+Optional proof/attachment
+
+The user must select the pool from which the money is being spent.
+
+The system should immediately show:
+
+Available balance
+Amount being spent
+Remaining balance
+
+Example:
+
+Learning
+
+Available:
+₦35,000
+
+Spend:
+₦20,000
+
+Remaining:
+₦15,000
+
+For pools that require a reason, the reason field must be required.
+
+For pools requiring proof, the attachment field must be required.
+
+The interface should clearly explain the requirement.
+
+TRANSACTION ACTIVITY
+Create a premium transaction history.
+
+Every transaction should clearly display:
+
+Icon
+Description
+Category
+Pool
+Date/time
+Amount
+Status
+
+Examples:
+
+Salary
++₦500,000
+
+React Course
+−₦20,000
+
+Emergency Fund Allocation
++₦50,000
+
+MacBook Fund
++₦75,000
+
+Use clear positive/negative financial hierarchy.
+
+Allow filtering by:
+
+All
+Income
+Expenses
+Transfers
+Allocations
+Withdrawals
+Savings
+
+Allow filtering by pool and date.
+
+TRANSACTION DETAIL
+Every transaction should have a dedicated detail page.
+
+Show:
+
+Amount
+Transaction type
+Pool
+Description
+Reason
+Date
+Time
+Reference
+Status
+Related income
+Related allocation
+Related withdrawal if applicable
+
+The user should be able to understand exactly where the money came from and where it went.
+
+SAVINGS GOALS
+Create a dedicated Goals section.
+
+Users should be able to create goals.
+
+Example:
+
+MacBook
+
+Target:
+₦1,500,000
+
+Current:
+₦450,000
+
+Remaining:
+₦1,050,000
+
+Progress:
+30%
+
+Show:
+
+Target amount
+Current amount
+Remaining amount
+Deadline
+Contribution rate
+Estimated completion date
+Recent contributions
+
+The goal interface should feel motivating but sophisticated.
+
+Avoid childish gamification.
+
+GOAL STATES
+Goals can have states:
+
+Active
+Completed
+Paused
+Cancelled
+
+When a goal reaches 100%, show a subtle but premium completion interaction.
+
+Do not use confetti or excessive animations.
+
+EMERGENCY FUND
+Emergency funds should look different from normal savings because they have a different purpose.
+
+Show:
+
+Emergency Fund
+₦200,000
+
+No fixed target required.
+
+Show the pool’s withdrawal policy.
+
+Example:
+
+“Withdrawals require an emergency reason.”
+
+The interface should make the user understand that this money is intentionally protected.
+
+RESTRICTED POOLS
+The application needs a universal concept of pool policies.
+
+A pool can be:
+
+Available
+Restricted
+Goal locked
+Reason required
+Proof required
+Cooldown required
+
+These policies should affect the interface automatically.
+
+Do not hardcode the UI around one specific pool.
+
+The frontend should respond dynamically to pool policy data.
+
+WITHDRAWAL
+Create a dedicated withdrawal flow.
+
+User selects:
+
+Pool
+Amount
+Destination
+Reason if required
+
+Before confirmation show:
+
+Amount
+Source pool
+Destination
+Remaining pool balance
+Applicable restrictions
+Potential processing status
+
+Example:
+
+Withdraw ₦50,000
+
+From:
+Fun
+
+To:
+Bank Account
+
+After confirmation, show a transaction state:
+
+Processing
+
+Then:
+
+Successful
+
+or:
+
+Failed
+
+Never immediately display a withdrawal as successful if the backend/provider has not confirmed it.
+
+ALLOCATION ENGINE UI
+Create an allocation policy management screen.
+
+This is one of the core parts of the application.
+
+Display:
+
+Policy name
+
+Example:
+
+Salary Allocation
+
+Then:
+
+Needs 40%
+Savings 15%
+Emergency 10%
+Learning 7%
+Investment 10%
+Fun 8%
+Giving 5%
+Flexible 5%
+
+Show:
+
+Total: 100%
+
+The interface should prevent invalid policies where allocations do not equal 100%.
+
+Allow:
+
+Add pool
+Remove pool
+Edit percentage
+Reorder pools
+Change policy
+Duplicate policy
+
+However, the initial default policy should be loaded from configuration and should not be hardcoded into individual components.
+
+POLICY PREVIEW
+When editing a policy, provide a live preview.
+
+Example:
+
+“If ₦500,000 enters your account…”
+
+Then show the resulting allocation.
+
+This makes the rules understandable.
+
+NOTIFICATIONS
+Design a notification/inbox experience.
+
+Examples:
+
+Salary received
+
+₦500,000 received and allocated successfully.
+
+Savings goal updated
+
+You’re now 30% toward your MacBook.
+
+Pool restriction
+
+Your Learning pool requires proof for this transaction.
+
+Withdrawal successful
+
+₦50,000 has been transferred successfully.
+
+The frontend should be PWA-ready for future browser push notifications.
+
+Do not implement fake notifications as if they are real backend events.
+
+Create the UI and notification architecture so real push notifications can be connected later.
+
+PWA
+The application must be designed as a proper PWA.
+
+Include:
+
+Responsive mobile layout
+Installable manifest
+App icons
+Splash/loading experience
+Offline-friendly shell
+Service worker architecture
+Responsive desktop fallback
+Mobile safe-area support
+
+The application should feel like an installed mobile app when launched from the home screen.
+
+OFFLINE EXPERIENCE
+The financial system must not falsely claim that an offline transaction has successfully moved real money.
+
+If offline functionality is implemented:
+
+Clearly distinguish:
+
+Local pending action
+Synced transaction
+Provider-confirmed transaction
+
+Never present an unconfirmed financial transaction as completed.
+
+RESPONSIVE DESIGN
+Primary target:
+
+Mobile
+
+Secondary:
+
+Tablet
+
+Desktop should provide a wider version of the same product without becoming a traditional admin dashboard.
+
+Use max-width containers on large screens.
+
+ANIMATION
+Use subtle premium motion.
+
+Examples:
+
+Balance transitions
+Pool progress animations
+Page transitions
+Bottom-sheet interactions
+Modal transitions
+Success states
+Loading skeletons
+Button feedback
+
+Animation should make the application feel polished.
+
+Do not overanimate.
+
+Do not use flashy effects.
+
+COMPONENT QUALITY
+Create reusable components.
+
+Examples:
+
+BalanceCard
+PoolCard
+TransactionRow
+TransactionList
+QuickAction
+GoalCard
+ProgressIndicator
+AllocationRow
+PolicyEditor
+BottomSheet
+AmountInput
+MoneyInput
+TransactionStatus
+EmptyState
+NotificationItem
+Header
+BottomNavigation
+
+Avoid duplicated UI.
+
+EMPTY STATES
+Every major section needs a polished empty state.
+
+Examples:
+
+No transactions yet
+No savings goals
+No income recorded
+No notifications
+
+Do not use generic illustrations.
+
+Use typography, iconography and subtle composition.
+
+LOADING STATES
+Use skeleton loaders rather than blank screens.
+
+ERROR STATES
+Errors should be understandable.
+
+Avoid technical messages.
+
+Bad:
+
+“ERR_NETWORK_500”
+
+Good:
+
+“We couldn’t load your transactions. Check your connection and try again.”
+
+SECURITY UX
+Include:
+
+Balance privacy mode
+Session awareness
+Confirmation for sensitive actions
+Clear transaction status
+Secure-looking but non-alarming UI
+
+Do not create fake security claims.
+
+ARCHITECTURE
+Keep the frontend cleanly separated from financial logic.
+
+Do not calculate important financial state independently in random UI components.
+
+Use a centralized financial state/domain layer.
+
+The backend will eventually be responsible for:
+
+Ledger
+Allocation engine
+Transaction validation
+Pool policies
+Payment provider integration
+Webhook processing
+Withdrawal execution
+
+The frontend should consume these through clean interfaces.
+
+For the initial frontend prototype, mock data may be used, but structure it exactly like real API data.
+
+Do not hardcode fake balances directly inside UI components.
+
+PAYMENT PROVIDER
+The eventual payment provider is Paystack.
+
+Do not hardwire Paystack-specific behavior into the UI.
+
+Create provider-agnostic financial interfaces.
+
+The frontend should eventually support:
+
+Incoming payment
+Payment confirmation
+Account information
+Transfer
+Withdrawal
+Transaction status
+Provider reference
+
+Paystack should be treated as the financial infrastructure layer, not the financial rules engine.
+
+INITIAL V1
+This is a personal product.
+
+Do not build:
+
+Multi-user administration
+Public onboarding
+Social features
+Referral systems
+Loans
+Cards
+Marketplace
+Chat
+Complex KYC
+Public profiles
+Business accounts
+
+Focus entirely on the user’s personal financial operating system.
+
+IMPORTANT PRODUCT RULE
+The user should never have to wonder:
+
+“Where did my money go?”
+
+The application should always be able to answer:
+
+Where did it come from?
+Which policy allocated it?
+Which pool received it?
+What is that pool allowed to do?
+What was it spent on?
+Why was it spent?
+What is the remaining balance?
+
+DESIGN QUALITY BAR
+This must look like a real premium fintech product, not an AI-generated dashboard.
+
+Pay particular attention to:
+
+Spacing
+Typography
+Alignment
+Visual hierarchy
+Touch targets
+Bottom navigation
+Cards
+Financial numbers
+Button placement
+Sheet interactions
+Transitions
+Empty states
+Loading states
+Error states
+Mobile ergonomics
+Accessibility
+
+The result should feel polished enough that the user could install it on their phone and genuinely use it every day.
+
+Do not stop at generating a few screens.
+
+Build the complete frontend navigation and all major states described above.
+
+Use realistic mock financial data until the backend is connected.
+
+Do not invent financial rules beyond the default policy configuration supplied separately.
+
+The default policy must remain configurable.
+
+The product should feel like a personal CFO living inside a fintech application.
