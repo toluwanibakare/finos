@@ -21,8 +21,7 @@ export default function Home() {
   return (
     <PageContainer padded={false}>
       <div className="flex flex-col items-center pt-3 pb-2 animate-fade-in">
-        <img src="/logo.PNG" alt="RUNDA" className="w-20 h-20 rounded-[24px] object-cover mb-3" />
-        <p className="text-[10px] text-gray-300 dark:text-gray-600 font-semibold tracking-[0.15em] uppercase">RUNDA</p>
+        <img src="/logo.PNG" alt="RUNDA" className="w-20 h-20 rounded-[24px] object-cover" />
       </div>
 
       <div className="flex items-center justify-between px-4 pb-3">
