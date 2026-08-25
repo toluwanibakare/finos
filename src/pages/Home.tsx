@@ -20,9 +20,9 @@ export default function Home() {
 
   return (
     <PageContainer padded={false}>
-      <div className="sticky top-0 z-40 bg-[#F7F8FB] dark:bg-[#0B1320]">
-        <div className="flex justify-center -my-2">
-          <img src="/logo.PNG" alt="RUNDA" className="w-[110px] h-[110px] rounded-[24px] object-contain" />
+      <div className="sticky top-0 z-40 bg-[#F7F8FB] dark:bg-[#0B1320] overflow-hidden">
+        <div className="flex justify-center py-1">
+          <img src="/logo.PNG" alt="RUNDA" className="w-[100px] h-[100px] rounded-[22px] object-contain" />
         </div>
       </div>
 

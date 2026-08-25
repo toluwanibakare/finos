@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { BottomNav } from './components/layout/BottomNav'
 import { SplashScreen } from './components/ui/SplashScreen'
 import { PinLogin } from './components/ui/PinLogin'
@@ -22,6 +22,14 @@ import Preferences from './pages/Preferences'
 import About from './pages/About'
 import Terms from './pages/Terms'
 import Website from './pages/Website'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
 
 export default function App() {
   const darkMode = useStore((s) => s.darkMode)
@@ -48,6 +56,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-dvh flex flex-col bg-[#F7F8FB] dark:bg-[#0B1320] transition-colors">
         <div className="flex-1 pb-[68px]">
           <Routes>

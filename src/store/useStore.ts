@@ -61,8 +61,8 @@ export const useStore = create<AppState>((set, get) => ({
     set({ darkMode: next })
   },
 
-  isLocked: localStorage.getItem('runda-pin') !== null,
-  pin: localStorage.getItem('runda-pin') || '',
+  isLocked: true,
+  pin: localStorage.getItem('runda-pin') || '8212',
   setPin: (pin: string) => {
     localStorage.setItem('runda-pin', pin)
     set({ pin, isLocked: false })
