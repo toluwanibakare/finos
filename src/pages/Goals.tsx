@@ -5,6 +5,7 @@ import type { GoalState } from '../types'
 import { PageContainer } from '../components/layout/PageContainer'
 import { Header } from '../components/layout/Header'
 import { GoalCard } from '../components/ui/GoalCard'
+import { SwipeableCard } from '../components/ui/SwipeableCard'
 import { EmptyState } from '../components/ui/EmptyState'
 
 const filterTabs: { key: GoalState | 'all'; label: string }[] = [
@@ -17,6 +18,7 @@ const filterTabs: { key: GoalState | 'all'; label: string }[] = [
 export default function Goals() {
   const navigate = useNavigate()
   const goals = useStore((s) => s.goals)
+  const updateGoal = useStore((s) => s.updateGoal)
   const [activeFilter, setActiveFilter] = useState<GoalState | 'all'>('all')
 
   const filtered = activeFilter === 'all'
@@ -70,7 +72,12 @@ export default function Goals() {
                 className="animate-fade-in"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
-                <GoalCard goal={goal} onClick={() => navigate(`/goal/${goal.id}`)} />
+                <SwipeableCard
+                  onEdit={() => navigate(`/goal/${goal.id}`)}
+                  onDelete={() => updateGoal(goal.id, { state: 'cancelled' })}
+                >
+                  <GoalCard goal={goal} onClick={() => navigate(`/goal/${goal.id}`)} />
+                </SwipeableCard>
               </div>
             ))}
           </div>
