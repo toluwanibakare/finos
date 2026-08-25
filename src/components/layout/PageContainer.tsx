@@ -7,7 +7,7 @@ interface PageContainerProps {
 export function PageContainer({ children, className = '', padded = true }: PageContainerProps) {
   return (
     <main
-      className={`min-h-screen bg-[#F7F8FB] pt-[52px] pb-24 ${
+      className={`min-h-screen bg-[#F7F8FB] pt-[52px] pb-20 ${
         padded ? 'px-4' : ''
       } ${className}`}
     >

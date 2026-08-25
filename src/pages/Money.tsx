@@ -138,8 +138,6 @@ export default function Money() {
           </div>
         </div>
       </div>
-
-      <div className="h-4" />
     </PageContainer>
   )
 }

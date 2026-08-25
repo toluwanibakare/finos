@@ -7,6 +7,7 @@ import {
   MoreHorizontal, LogOut, Download, Upload, Calendar, Tag, MapPin,
   Percent, GripVertical, Trash2, Copy, Edit3, Info,
   CircleDollarSign, Banknote, Coins, Landmark, Smartphone, Globe,
+  Moon, Mail, Lock,
 } from 'lucide-react'
 
 const iconMap: Record<string, React.ComponentType<{ className?: string; size?: number }>> = {
@@ -65,6 +66,9 @@ const iconMap: Record<string, React.ComponentType<{ className?: string; size?: n
   copy: Copy,
   edit: Edit3,
   info: Info,
+  moon: Moon,
+  mail: Mail,
+  lock: Lock,
 }
 
 interface FinosIconProps {

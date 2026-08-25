@@ -135,8 +135,6 @@ export default function TransactionDetail() {
           </div>
         )}
       </div>
-
-      <div className="h-4" />
     </PageContainer>
   )
 }

@@ -292,8 +292,6 @@ export default function Withdrawal() {
           </div>
         )}
       </div>
-
-      <div className="h-4" />
     </PageContainer>
   )
 }

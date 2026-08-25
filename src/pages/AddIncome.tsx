@@ -197,8 +197,6 @@ export default function AddIncome() {
           Add Income
         </button>
       </div>
-
-      <div className="h-4" />
     </PageContainer>
   )
 }

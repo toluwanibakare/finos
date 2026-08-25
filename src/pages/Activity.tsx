@@ -147,8 +147,6 @@ export default function Activity() {
           </div>
         )}
       </div>
-
-      <div className="h-4" />
     </PageContainer>
   )
 }

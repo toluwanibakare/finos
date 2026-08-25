@@ -171,8 +171,6 @@ export default function PoolDetail() {
           )}
         </div>
       </div>
-
-      <div className="h-4" />
     </PageContainer>
   )
 }

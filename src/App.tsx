@@ -13,12 +13,17 @@ import AddExpense from './pages/AddExpense'
 import Withdrawal from './pages/Withdrawal'
 import AllocationPolicy from './pages/AllocationPolicy'
 import Notifications from './pages/Notifications'
+import Privacy from './pages/Privacy'
+import Preferences from './pages/Preferences'
+import About from './pages/About'
+import Terms from './pages/Terms'
+import Website from './pages/Website'
 
 export default function App() {
   return (
     <BrowserRouter>
       <div className="min-h-dvh flex flex-col bg-[#F7F8FB]">
-        <div className="flex-1 pb-20">
+        <div className="flex-1 pb-[68px]">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/money" element={<Money />} />
@@ -33,6 +38,11 @@ export default function App() {
             <Route path="/withdrawal" element={<Withdrawal />} />
             <Route path="/allocation-policy" element={<AllocationPolicy />} />
             <Route path="/notifications" element={<Notifications />} />
+            <Route path="/settings/privacy" element={<Privacy />} />
+            <Route path="/settings/preferences" element={<Preferences />} />
+            <Route path="/settings/about" element={<About />} />
+            <Route path="/settings/terms" element={<Terms />} />
+            <Route path="/settings/website" element={<Website />} />
           </Routes>
         </div>
         <BottomNav />

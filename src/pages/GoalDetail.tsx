@@ -154,8 +154,6 @@ export default function GoalDetail() {
           )}
         </div>
       </div>
-
-      <div className="h-4" />
     </PageContainer>
   )
 }

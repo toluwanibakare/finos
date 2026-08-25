@@ -322,8 +322,6 @@ export default function AllocationPolicy() {
         </button>
       </div>
 
-      <div className="h-4" />
-
       {/* Add allocation sheet */}
       {showAddSheet && (
         <div className="fixed inset-0 z-[60] flex items-end justify-center">

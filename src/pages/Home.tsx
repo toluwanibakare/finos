@@ -148,8 +148,6 @@ export default function Home() {
           </div>
         </section>
       )}
-
-      <div className="h-2" />
     </PageContainer>
   )
 }

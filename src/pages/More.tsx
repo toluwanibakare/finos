@@ -110,8 +110,6 @@ export default function More() {
 
         <p className="text-center text-[10px] text-gray-300 font-medium mb-6">FINOS v1.0.0</p>
       </div>
-
-      <div className="h-4" />
     </PageContainer>
   )
 }

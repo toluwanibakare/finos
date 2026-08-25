@@ -76,8 +76,6 @@ export default function Goals() {
           </div>
         )}
       </div>
-
-      <div className="h-4" />
     </PageContainer>
   )
 }

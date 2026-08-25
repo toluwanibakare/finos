@@ -195,8 +195,6 @@ export default function AddExpense() {
           Add Expense
         </button>
       </div>
-
-      <div className="h-4" />
     </PageContainer>
   )
 }
