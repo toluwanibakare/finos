@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <PageContainer padded={false}>
-      <div className="flex justify-center pt-1 pb-1 animate-fade-in">
+      <div className="flex justify-center pt-0 pb-1 animate-fade-in">
         <img src="/logo.PNG" alt="RUNDA" className="w-20 h-20 rounded-[18px] object-contain" />
       </div>
 
