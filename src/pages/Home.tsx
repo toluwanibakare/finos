@@ -11,6 +11,7 @@ import { FinosIcon } from '../components/icons/FinosIcons'
 
 export default function Home() {
   const navigate = useNavigate()
+  const darkMode = useStore((s) => s.darkMode)
   const pools = useStore((s) => s.pools)
   const transactions = useStore((s) => s.transactions)
   const goals = useStore((s) => s.goals)
