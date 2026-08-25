@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useLayoutEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { BottomNav } from './components/layout/BottomNav'
 import { SplashScreen } from './components/ui/SplashScreen'
@@ -36,7 +36,7 @@ export default function App() {
   const isLocked = useStore((s) => s.isLocked)
   const [showSplash, setShowSplash] = useState(true)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark')
     } else {

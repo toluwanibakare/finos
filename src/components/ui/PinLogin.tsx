@@ -60,15 +60,15 @@ export function PinLogin() {
 
   return (
     <div className={`fixed inset-0 z-[200] flex flex-col items-center justify-center transition-all duration-500 ${
-      darkMode ? 'bg-[#0B1320]' : 'bg-[#013D7C]'
+      darkMode ? 'bg-[#0B1320]' : 'bg-white'
     }`}>
       <div className={`flex flex-col items-center transition-all duration-500 ${success ? 'scale-110 opacity-0' : 'scale-100 opacity-100'}`}>
-        <div className="flex items-center justify-center w-20 h-20 rounded-[22px] mb-6 animate-scale-in">
-          <img src={darkMode ? "/logo_white.PNG" : "/logo.PNG"} alt="RUNDA" className="w-20 h-20 rounded-[22px] object-contain" />
+        <div className="mb-8">
+          <img src={darkMode ? "/logo_white.PNG" : "/logo.PNG"} alt="RUNDA" className="w-[120px] h-[120px] rounded-[28px] object-contain" />
         </div>
 
         <p className={`text-[14px] font-medium mb-1 animate-fade-in ${
-          darkMode ? 'text-white/50' : 'text-white/50'
+          darkMode ? 'text-white/50' : 'text-gray-500'
         }`}>
           {hasPin ? 'Enter your PIN' : !confirming ? 'Confirm your PIN' : 'Create a 4-digit PIN'}
         </p>
@@ -82,7 +82,7 @@ export function PinLogin() {
                   ? 'bg-[#C62828] animate-pulse'
                   : filled
                   ? 'bg-[#E8B931] scale-110'
-                  : darkMode ? 'bg-white/15' : 'bg-white/15'
+                  : darkMode ? 'bg-white/15' : 'bg-gray-300'
               }`}
             />
           ))}
@@ -96,7 +96,7 @@ export function PinLogin() {
                 <button
                   key="del"
                   onClick={handleDelete}
-                  className="flex items-center justify-center h-16 rounded-2xl text-white/40 active:text-white active:bg-white/10 transition-all duration-150 text-[14px] font-semibold"
+                  className="flex items-center justify-center h-16 rounded-2xl text-gray-400 active:text-gray-800 active:bg-gray-100 transition-all duration-150 text-[14px] font-semibold"
                 >
                   Del
                 </button>
@@ -106,7 +106,7 @@ export function PinLogin() {
               <button
                 key={key}
                 onClick={() => handleDigit(key)}
-                className="flex items-center justify-center h-16 rounded-2xl bg-white/[0.06] text-white text-[22px] font-semibold active:bg-[#E8B931] active:text-[#013D7C] transition-all duration-150 active:scale-95"
+                className="flex items-center justify-center h-16 rounded-2xl bg-gray-100 dark:bg-white/[0.06] text-gray-800 dark:text-white text-[22px] font-semibold active:bg-[#E8B931] active:text-[#013D7C] transition-all duration-150 active:scale-95"
               >
                 {key}
               </button>
