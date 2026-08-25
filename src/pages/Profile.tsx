@@ -6,7 +6,6 @@ import { FinosIcon } from '../components/icons/FinosIcons'
 import { userProfile } from '../data/mockData'
 
 export default function Profile() {
-  const darkMode = useStore((s) => s.darkMode)
   const [name, setName] = useState(userProfile.name)
   const [email, setEmail] = useState('tolu@email.com')
   const [phone, setPhone] = useState('+234 800 000 0000')
@@ -41,7 +40,7 @@ export default function Profile() {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full bg-gray-50 dark:bg-gray-800 rounded-[12px] px-4 py-3 text-[14px] font-semibold text-[#013D7C] dark:text-white outline-none focus:ring-2 focus:ring-[#013D7C]/20 dark:focus:ring-[#E8B931]/20 transition-all"
+              className="w-full bg-gray-50 dark:bg-gray-800 rounded-[12px] px-4 py-3 text-[14px] font-semibold text-[#013D7C] dark:text-white outline-none focus:ring-2 focus:ring-[#013D7C]/20 transition-all"
             />
           </div>
 
@@ -51,7 +50,7 @@ export default function Profile() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-gray-50 dark:bg-gray-800 rounded-[12px] px-4 py-3 text-[14px] font-semibold text-[#013D7C] dark:text-white outline-none focus:ring-2 focus:ring-[#013D7C]/20 dark:focus:ring-[#E8B931]/20 transition-all"
+              className="w-full bg-gray-50 dark:bg-gray-800 rounded-[12px] px-4 py-3 text-[14px] font-semibold text-[#013D7C] dark:text-white outline-none focus:ring-2 focus:ring-[#013D7C]/20 transition-all"
             />
           </div>
 
@@ -61,7 +60,7 @@ export default function Profile() {
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="w-full bg-gray-50 dark:bg-gray-800 rounded-[12px] px-4 py-3 text-[14px] font-semibold text-[#013D7C] dark:text-white outline-none focus:ring-2 focus:ring-[#013D7C]/20 dark:focus:ring-[#E8B931]/20 transition-all"
+              className="w-full bg-gray-50 dark:bg-gray-800 rounded-[12px] px-4 py-3 text-[14px] font-semibold text-[#013D7C] dark:text-white outline-none focus:ring-2 focus:ring-[#013D7C]/20 transition-all"
             />
           </div>
         </div>
