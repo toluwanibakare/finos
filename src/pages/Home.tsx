@@ -20,8 +20,8 @@ export default function Home() {
 
   return (
     <PageContainer padded={false}>
-      <div className="flex justify-center pt-0 pb-1 animate-fade-in">
-        <img src="/logo.PNG" alt="RUNDA" className="w-20 h-20 rounded-[18px] object-contain" />
+      <div className="flex justify-center -mt-2 pb-1 animate-fade-in">
+        <img src="/logo.PNG" alt="RUNDA" className="w-28 h-28 rounded-[22px] object-contain" />
       </div>
 
       <div className="flex items-center justify-between px-4 pb-3">
