@@ -1,0 +1,17 @@
+interface PageContainerProps {
+  children: React.ReactNode
+  className?: string
+  padded?: boolean
+}
+
+export function PageContainer({ children, className = '', padded = true }: PageContainerProps) {
+  return (
+    <main
+      className={`min-h-screen bg-[#F7F8FB] pt-[52px] pb-24 ${
+        padded ? 'px-4' : ''
+      } ${className}`}
+    >
+      <div className="max-w-lg mx-auto w-full">{children}</div>
+    </main>
+  )
+}
